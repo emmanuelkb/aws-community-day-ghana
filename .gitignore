@@ -4,3 +4,8 @@ site.png
 viewport.png
 _kit-test.html
 .superpowers/
+docs/
+.idea/
+kit-test-*.png
+screenshots/1440px-*.png
+screenshots/390px-*.png
