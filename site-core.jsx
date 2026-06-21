@@ -36,7 +36,7 @@ const btnGhostNavy = () => ({ background: "transparent", color: "#fff", border: 
 /* ───────────────────── Wordmark (Logo B, compact) ───────────────────── */
 const Wordmark = ({ tone = "dark", compact = false }) => {
   const c = tone === "light" ? "#fff" : TOKENS.ink;
-  const ghanaCol = tone === "light" ? TOKENS.starGold : TOKENS.terracotta;
+  const accraCol = "#D4A24C"; // official Accra-logo gold, used on both tones
   const w = compact ? 40 : 46;
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 13, color: c }}>
@@ -48,7 +48,12 @@ const Wordmark = ({ tone = "dark", compact = false }) => {
       <div style={{ width: 1, height: 26, background: tone === "light" ? "rgba(255,255,255,0.25)" : "rgba(26,20,16,0.2)" }} />
       <div style={{ lineHeight: 1.15, fontWeight: 800, letterSpacing: "0.02em", textTransform: "uppercase", fontFamily: TOKENS.fontDisplay }}>
         <div style={{ fontSize: compact ? 12 : 13 }}>Community Day</div>
-        <div style={{ fontSize: compact ? 9 : 10, color: ghanaCol, marginTop: 3, fontWeight: 700, letterSpacing: "0.16em" }}>Ghana · 2026</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 3 }}>
+          <svg viewBox="0 0 100 100" width={compact ? 9 : 10} height={compact ? 9 : 10} aria-hidden style={{ flexShrink: 0 }}>
+            <path d="M50 6 L61 38.5 L96 38.5 L67.5 58.5 L78.5 92 L50 71.5 L21.5 92 L32.5 58.5 L4 38.5 L39 38.5 Z" fill={accraCol} />
+          </svg>
+          <span style={{ fontSize: compact ? 9 : 10, color: accraCol, fontWeight: 700, letterSpacing: "0.18em" }}>Accra</span>
+        </div>
       </div>
     </div>
   );
