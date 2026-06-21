@@ -316,6 +316,13 @@ const AkwaabaWeave = ({ opacity = 0.08, drift = true, tone = "light" }) => {
   );
 };
 
+/* ───────────────────── Black Star (Ghanaian flag star) ───────────────────── */
+const BlackStar = ({ size = 80, color = "#FFC857", opacity = 0.14 }) => (
+  <svg viewBox="0 0 100 100" width={size} height={size} aria-hidden style={{ opacity }}>
+    <path d="M50 6 L61 38.5 L96 38.5 L67.5 58.5 L78.5 92 L50 71.5 L21.5 92 L32.5 58.5 L4 38.5 L39 38.5 Z" fill={color} />
+  </svg>
+);
+
 /* ───────────────────── PageHeader (shared page hero) ───────────────────── */
 const PageHeader = ({ eyebrow, title, sub, glyph }) => (
   <header style={{ background: TOKENS.navy, color:"#fff", padding:"148px 56px 72px", position:"relative", overflow:"hidden" }}>
@@ -361,15 +368,11 @@ const Footer = () => (
     <div style={{ maxWidth: 1280, margin: "0 auto" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, paddingBottom: 40, borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="footer-grid">
         <div>
-          <div style={{ color: "#fff", display: "flex", alignItems: "center", gap: 10 }}>
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <rect x="1.5" y="1.5" width="29" height="29" rx="7" stroke="#fff" strokeWidth="1.5" />
-              <path d="M8 21 L16 9 L24 21 M11.5 16.5 L20.5 16.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="square" />
-            </svg>
-            <div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>AWS Community Day</div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginTop: 2, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>Ghana · 29 Aug 2026</div>
+          <div style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
+            <div aria-hidden style={{ position: "absolute", left: -10, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}>
+              <BlackStar size={72} />
             </div>
+            <div style={{ position: "relative" }}><Wordmark tone="light" /></div>
           </div>
           <p style={{ fontSize: 13, lineHeight: 1.6, marginTop: 20, maxWidth: 360 }}>
             A community-led conference for cloud builders in Ghana, organised by AWS User Group Accra. Independent, free, and run by volunteers.
@@ -461,6 +464,7 @@ Object.assign(window, {
   SectionEyebrow, SectionHeadline,
   Countdown, Nav, MobileMenu,
   Adinkra, ADINKRA_MEANING, AkwaabaWeave, Reveal,
+  BlackStar,
   CONTACT, LUMA_URL, CFP_URL, VOLUNTEER_URL,
   btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy,
   Footer, NotifyModal, PageHeader,

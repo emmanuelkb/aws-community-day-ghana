@@ -35,7 +35,7 @@
       const [mobileOpen,setMobileOpen]=React.useState(false);
       const [notifyOpen,setNotifyOpen]=React.useState(false);
       return (<div>
-        <Nav onRegister={()=>setNotifyOpen(true)} onMobileToggle={()=>setMobileOpen(!mobileOpen)} mobileOpen={mobileOpen} active="/cfp.html" />
+        <Nav onRegister={()=>setNotifyOpen(true)} onMobileToggle={()=>setMobileOpen(!mobileOpen)} mobileOpen={mobileOpen} darkHero={true} active="/cfp.html" />
         <MobileMenu open={mobileOpen} onClose={()=>setMobileOpen(false)} onRegister={()=>setNotifyOpen(true)} />
         <CFPPage />
         <Footer />
