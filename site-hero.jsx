@@ -45,7 +45,7 @@ const HeroLockup = () => (
         </svg>
         <div style={{
           position: "relative", fontSize: 26, letterSpacing: "0.16em", textTransform: "uppercase",
-          color: TOKENS.starGold, fontWeight: 800, padding: "0 6px",
+          color: "#D4A24C", fontWeight: 800, padding: "0 6px",
         }}>Accra</div>
       </div>
       <div style={{ height: 1.5, width: 100, background: "rgba(255,255,255,0.55)" }} />

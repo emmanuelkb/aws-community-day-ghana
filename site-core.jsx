@@ -368,12 +368,7 @@ const Footer = () => (
     <div style={{ maxWidth: 1280, margin: "0 auto" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, paddingBottom: 40, borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="footer-grid">
         <div>
-          <div style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
-            <div aria-hidden style={{ position: "absolute", left: -10, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}>
-              <BlackStar size={72} />
-            </div>
-            <div style={{ position: "relative" }}><Wordmark tone="light" /></div>
-          </div>
+          <img src="/assets/logo-accra-b.svg" alt="AWS Community Day Ghana — Accra" style={{ width: 200, height: "auto", display: "block" }} />
           <p style={{ fontSize: 13, lineHeight: 1.6, marginTop: 20, maxWidth: 360 }}>
             A community-led conference for cloud builders in Ghana, organised by AWS User Group Accra. Independent, free, and run by volunteers.
           </p>
