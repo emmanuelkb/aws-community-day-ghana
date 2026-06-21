@@ -91,7 +91,7 @@ const WhySponsorBand = () => {
             <SectionEyebrow dark>Why sponsor?</SectionEyebrow>
             <SectionHeadline dark>Reach Ghana's cloud community</SectionHeadline>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", maxWidth: 620, marginTop: 18, lineHeight: 1.6 }}>
-              AWS Community Day Ghana 2026 is the first dedicated AWS community conference in West Africa — a concentrated audience of cloud practitioners, founders, and students who build for the region.
+              AWS Community Day Ghana 2026 is the first dedicated AWS community conference in West Africa. The audience is cloud practitioners, founders, and students who build for the region.
             </p>
           </div>
         </Reveal>
@@ -165,7 +165,7 @@ const InKindSection = () => (
         <SectionEyebrow>In-kind sponsorship</SectionEyebrow>
         <SectionHeadline>Contribute in kind</SectionHeadline>
         <p style={{ fontSize: 16, color: TOKENS.ink2, maxWidth: 580, marginTop: 18, lineHeight: 1.6 }}>
-          Can't commit to a cash tier? We also welcome in-kind contributions that directly support the event experience.
+          Can't commit to a cash tier? We also welcome in-kind contributions that directly support the event.
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 36 }}>
           {IN_KIND.map((item, i) => (
@@ -211,7 +211,7 @@ const ContactCTA = () => (
               Partner with Ghana's cloud community
             </div>
             <p style={{ fontSize: 15, color: "rgba(255,255,255,0.72)", lineHeight: 1.6, marginTop: 16, maxWidth: 480 }}>
-              Email us for the full prospectus with pricing. We'll tailor a package that fits your goals and budget.
+              Email us for the full prospectus with pricing. We can put together a package that fits your budget.
             </p>
           </div>
           <a
@@ -233,7 +233,7 @@ const SponsorsPage = () => (
       eyebrow="Sponsorship · AWS Community Day Ghana 2026"
       title="Power the community"
       glyph="gyenyame"
-      sub="Your brand alongside Ghana's first AWS community conference. Five tiers to match any goal — from headline keynote to community partner."
+      sub="Your brand at Ghana's first AWS community conference. Five tiers, from headline keynote slot to community partner."
     />
 
     {/* Why-sponsor stat band */}
@@ -246,7 +246,7 @@ const SponsorsPage = () => (
           <SectionEyebrow>Sponsorship tiers</SectionEyebrow>
           <SectionHeadline>Choose your tier</SectionHeadline>
           <p style={{ fontSize: 16, color: TOKENS.ink2, maxWidth: 580, marginTop: 16, lineHeight: 1.6 }}>
-            Five tiers designed to maximise visibility at every level. Email us for the full prospectus with pricing.
+            Five tiers at different levels of visibility and involvement. Email us for the full prospectus with pricing.
           </p>
         </div>
       </Reveal>

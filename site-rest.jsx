@@ -35,7 +35,7 @@ const Sponsors = () => (
           <a href="/sponsors.html" style={{ ...btnGhost(), padding: "14px 22px" }}>Get the prospectus →</a>
         </div>
         <p style={{ fontSize: 16, lineHeight: 1.6, color: TOKENS.ink2, maxWidth: 640, marginBottom: 48 }}>
-          AWS Community Day Ghana is free to attend, made possible by sponsors. Five tiers are available — from headline Platinum to Community Partner. Reach 300+ builders, founders, and students across Ghana's cloud ecosystem.
+          AWS Community Day Ghana is free to attend, funded by sponsors. Five tiers are available, from headline Platinum to Community Partner. Your brand in front of 300+ builders, founders, and students in Ghana's cloud community.
         </p>
         <SponsorTier tier="Platinum" color={TOKENS.terracotta} count={1} names={["YOUR LOGO HERE"]} />
         <SponsorTier tier="Gold" color={TOKENS.gold} count={2} names={["LOGO", "LOGO"]} />
@@ -61,7 +61,7 @@ const Venue = () => (
           <div>
             <SectionHeadline dark size="large">See you in Accra</SectionHeadline>
             <p style={{ fontSize: 17, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", marginTop: 32, maxWidth: 540 }}>
-              The day takes place at the Main Auditorium in Accra — a 300-seat venue with air conditioning, an LED stage screen, public-address system, and a standby generator. Easy to reach across the city.
+              The day is at the Main Auditorium in Accra, a 300-seat venue with air conditioning, LED stage screen, PA system, and standby generator. Central and easy to reach from across the city.
             </p>
             <div style={{ marginTop: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
               {[
@@ -114,7 +114,7 @@ const Community = () => {
             <div>
               <SectionHeadline size="large">Organised by AWS User Group Accra</SectionHeadline>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2, marginTop: 28, maxWidth: 520 }}>
-                This is a community-led event, run entirely by volunteers from Ghana's cloud community. We partner with user groups, universities, and developer communities across the country.
+                This event is run entirely by volunteers from Ghana's cloud community. We partner with user groups, universities, and developer communities across the country.
               </p>
               <a href={`mailto:${CONTACT}`} style={{ ...btnPrimary(), marginTop: 28 }}>Partner with us</a>
             </div>
@@ -149,7 +149,7 @@ const Crew = () => {
               <SectionHeadline size="large">Help make it happen</SectionHeadline>
             </div>
             <div style={{ fontSize: 14, color: TOKENS.ink2, maxWidth: 340, lineHeight: 1.55 }}>
-              ~25 volunteers run the day across eight teams. Crew get a branded T-shirt, all meals, a certificate, and priority access to future community events.
+              ~25 volunteers run the day across eight teams. Crew get a branded T-shirt, all meals, a certificate, and first access to future community events.
             </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginTop: 56 }} className="crew-grid">
@@ -172,14 +172,14 @@ const Crew = () => {
 
 /* ───────────────────── FAQ ───────────────────── */
 const FAQ_ITEMS = [
-  ["Is the event free to attend?", "Yes. AWS Community Day Ghana 2026 is free, community-led, and open to anyone interested in cloud, AI, and engineering. Capacity is limited to 300, so register early once registration opens."],
-  ["When and where is it?", "Saturday 29 August 2026, 08:00–17:00, at the Main Auditorium in Accra, Ghana. The exact venue address is confirmed closer to the date."],
-  ["How do I register?", "Registration opens on Luma. Hit 'Register on Luma' in the hero, or 'Notify me' to be emailed the moment tickets go live."],
-  ["Who is it for?", "Software engineers, cloud architects, DevOps and security folks, data and AI practitioners, founders, and students — from total beginners to AWS Heroes."],
-  ["Can I speak?", "Yes — the call for speakers is open. We're after practical talks across FinTech, EdTech, AgriTech, GenAI, and more. First-time speakers welcome."],
+  ["Is the event free to attend?", "Yes. AWS Community Day Ghana 2026 is free and open to anyone interested in cloud, AI, and engineering. Capacity is 300, so register early once registration opens."],
+  ["When and where is it?", "Saturday 29 August 2026, 08:00–17:00, at the Main Auditorium in Accra, Ghana. The exact address is confirmed closer to the date."],
+  ["How do I register?", "Registration opens on Luma. Use 'Register on Luma' in the hero above, or 'Notify me' and we'll email you the moment tickets go live."],
+  ["Who is it for?", "Software engineers, cloud architects, DevOps and security practitioners, data and AI folks, founders, and students. Beginners and AWS Heroes alike."],
+  ["Can I speak?", "Yes. The call for speakers is open. We want practical talks across FinTech, EdTech, AgriTech, GenAI, and more. First-time speakers are welcome."],
   ["How can my company sponsor?", `We have Platinum, Gold, Silver, Bronze, and Community Partner tiers. Email ${CONTACT} for the sponsorship prospectus.`],
-  ["Can I volunteer?", "Absolutely. We run the day with ~25 volunteers across eight teams. See 'Join the crew' and apply — crew get a T-shirt, meals, and a certificate."],
-  ["Will sessions be recorded?", "Main-stage talks are recorded and shared after the event. Some breakouts may not be recorded to encourage open conversation."],
+  ["Can I volunteer?", "Yes. We run the day with ~25 volunteers across eight teams. See 'Join the crew' above and apply. Crew get a T-shirt, meals, and a certificate."],
+  ["Will sessions be recorded?", "Main-stage talks will be recorded and shared after the event. Some breakouts may not be recorded to keep the conversation open."],
 ];
 
 const FAQ = () => {
@@ -228,7 +228,7 @@ const Newsletter = ({ onNotify }) => (
         Be the first to know
       </h2>
       <p style={{ fontSize: 18, lineHeight: 1.55, color: "rgba(255,255,255,0.78)", maxWidth: 560, margin: "32px auto 0" }}>
-        We'll email you the moment registration opens on Luma — plus speaker drops and agenda updates.
+        We'll email you when registration opens on Luma, and again as speakers and agenda details are confirmed.
       </p>
       <div style={{ marginTop: 36, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
         <button onClick={onNotify} style={btnPrimaryNavy()}>Notify me</button>

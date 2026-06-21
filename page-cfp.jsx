@@ -5,16 +5,16 @@ const { TOKENS, PageHeader, Reveal, SectionEyebrow, SectionHeadline, Adinkra } =
 const { btnPrimaryNavy, btnGhostNavy, CFP_URL } = window;
 
 const WE_WANT = [
-  "Practical, specific talks grounded in real production experience.",
+  "Practical talks grounded in real production experience. Show your work.",
   "African use cases across FinTech, EdTech, AgriTech, and Generative AI.",
-  "Honest lessons — including a 'Cloud Horror Stories' lightning thread on what went wrong and why.",
-  "First-time speakers. We'll help you shape your talk.",
+  "Honest lessons, including the 'Cloud Horror Stories' lightning thread on what went wrong and why.",
+  "First-time speakers. We will help you shape your talk.",
 ];
 
 const HOW = [
-  ["Submit", "Send your title, abstract, and a short bio through the speaker form."],
-  ["Review", "The programme team reviews every submission against the tracks and formats."],
-  ["Confirm", "Selected speakers are confirmed and briefed ahead of the day."],
+  ["Submit", "Send your title, abstract, and a short bio via the speaker form."],
+  ["Review", "The programme team reads every submission and matches it against tracks and formats."],
+  ["Confirm", "Selected speakers are confirmed and briefed before the day."],
 ];
 
 const FORMATS = [
@@ -143,7 +143,7 @@ const CFPPage = () => (
             margin: "0 0 24px",
           }}>Submit your talk</h2>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: "0 0 48px", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
-            Got something worth sharing? First-time or veteran — we want to hear from you. Submissions are reviewed by the programme team.
+            Got something worth sharing? Whether it is your first talk or your fiftieth, send it in. The programme team reads every submission.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={CFP_URL} style={btnPrimaryNavy()}>Submit a talk</a>

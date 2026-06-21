@@ -120,7 +120,7 @@ const SpeakersPage = () => (
       eyebrow="Speakers · AWS Community Day Ghana 2026"
       title="Speakers & roles"
       glyph="gyenyame"
-      sub="Keynotes, panels, and breakout talks by cloud builders across West Africa. Line-up is being confirmed — the call for speakers is open."
+      sub="Keynotes, panels, and breakout talks by cloud builders across West Africa. The line-up is being confirmed. The call for speakers is open."
     />
 
     {/* Keynote roles */}
@@ -197,7 +197,7 @@ const SpeakersPage = () => (
                 Line-up is being confirmed — the call for speakers is open.
               </div>
               <p style={{ fontSize: 15, color: TOKENS.ink2, lineHeight: 1.6, marginTop: 16, maxWidth: 520 }}>
-                We want practical, specific talks grounded in real experience — across FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers especially welcome.
+                We want practical talks grounded in real experience, across FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers are welcome.
               </p>
             </div>
             <a href={CFP_URL} style={btnPrimary()}>Submit a talk</a>

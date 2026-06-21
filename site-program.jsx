@@ -7,10 +7,10 @@ const { btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy } = window;
 /* ───────────────────── Why Attend ───────────────────── */
 const WhyAttend = () => {
   const cards = [
-    ["Latest from AWS", "Hear the newest services, patterns, and launches explained by people who use them daily."],
-    ["African use cases", "Real production stories across FinTech, EdTech, and AgriTech — built for our context."],
-    ["Community", "Join a growing network of AWS users, Heroes, and Community Builders across West Africa."],
-    ["Free to attend", "Community-led and free, powered by our sponsors. Everyone is welcome."],
+    ["Latest from AWS", "Hear about new services, patterns, and launches from people who use them every day."],
+    ["African use cases", "Real production stories across FinTech, EdTech, and AgriTech, built for our context."],
+    ["Community", "Meet AWS users, Heroes, and Community Builders from across West Africa."],
+    ["Free to attend", "Community-led and free, funded by our sponsors. Everyone is welcome."],
   ];
   return (
     <section style={{ background: TOKENS.cream, padding: "120px 56px", borderTop: `1px solid ${TOKENS.line}` }}>
@@ -198,7 +198,7 @@ const CFP = () => (
           <div>
             <SectionHeadline dark size="large">Share what you've built</SectionHeadline>
             <p style={{ fontSize: 18, lineHeight: 1.6, marginTop: 32, color: "rgba(255,255,255,0.78)", maxWidth: 580 }}>
-              We want practical, specific talks grounded in real experience — across FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers especially welcome.
+              We want practical talks grounded in real experience — FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers are welcome.
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 36, flexWrap: "wrap" }}>
               <a href="/cfp.html" style={btnPrimaryNavy()}>Submit a talk</a>

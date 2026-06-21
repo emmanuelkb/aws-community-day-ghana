@@ -213,7 +213,7 @@ const VolunteerPage = () => (
           </div>
           <SectionHeadline size="large">Where you'll fit in</SectionHeadline>
           <p style={{ fontSize: 16, color: TOKENS.ink2, lineHeight: 1.6, marginTop: 20, maxWidth: 640 }}>
-            Every team is essential. Pick the work that suits you — or tell us your strengths and we'll match you.
+            Every team matters. Pick the work that suits you, or tell us your strengths and we will find the right fit.
           </p>
           <div style={{
             display: "grid",
@@ -257,8 +257,8 @@ const VolunteerPage = () => (
           </div>
           <SectionHeadline>What we'll ask</SectionHeadline>
           <p style={{ fontSize: 15, color: TOKENS.ink2, lineHeight: 1.6, marginTop: 16, maxWidth: 640 }}>
-            The application covers five sections — here's a preview so you can prepare before you apply.
-            The form itself lives in Google Forms and takes about 10 minutes to complete.
+            The application has five sections. Here is a preview so you know what to prepare before you apply.
+            The form is in Google Forms and takes about 10 minutes.
           </p>
 
           {/* Timeline note */}
@@ -333,11 +333,11 @@ const VolunteerPage = () => (
                 marginTop: 12,
                 maxWidth: 520,
               }}>
-                Help us build something the community will remember.
+                Help us put on something the community will remember.
               </div>
               <p style={{ fontSize: 15, color: "rgba(255,255,255,0.72)", lineHeight: 1.6, marginTop: 16, maxWidth: 480 }}>
                 Applications are open now. Shortlisted volunteers are confirmed by 25 July 2026.
-                We'll send you everything you need well before event day.
+                We will send you everything you need ahead of the day.
               </p>
             </div>
             <a href={VOLUNTEER_URL} style={btnPrimary()}>Apply to volunteer →</a>

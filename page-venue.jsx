@@ -137,7 +137,7 @@ const VenuePage = () => (
           <SectionEyebrow dark>Location</SectionEyebrow>
           <SectionHeadline dark size="large">Find us</SectionHeadline>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.65)", maxWidth: 600, marginTop: 16, marginBottom: 48 }}>
-            The event takes place at the Main Auditorium in Accra. The exact address will be confirmed and shared closer to the date via email and our social channels.
+            The event is at the Main Auditorium in Accra. The exact address will be shared closer to the date by email and on our social channels.
           </p>
           <MapPlaceholder />
         </div>
@@ -154,15 +154,15 @@ const VenuePage = () => (
             {[
               {
                 heading: "Power",
-                body: "The venue has a standby generator to ensure uninterrupted power throughout the day.",
+                body: "The venue has a standby generator so power runs throughout the day.",
               },
               {
                 heading: "Wi-Fi & connectivity",
-                body: "On-site Wi-Fi will be available. A 4G/5G mobile router is in place as a livestream backup in the event of connectivity issues.",
+                body: "On-site Wi-Fi is available. A 4G/5G mobile router is in place as a backup for the livestream if connectivity drops.",
               },
               {
                 heading: "Accessibility",
-                body: "Accessibility details — including step-free access and other provisions — will be confirmed closer to the date. Please contact us if you have specific requirements.",
+                body: "Step-free access and other accessibility details will be confirmed closer to the date. Contact us if you have specific requirements.",
               },
             ].map(({ heading, body }) => (
               <div key={heading} style={{

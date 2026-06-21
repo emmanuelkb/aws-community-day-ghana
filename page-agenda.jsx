@@ -44,7 +44,7 @@ const AgendaPage = () => (
       eyebrow="Agenda · 29 August 2026"
       title="Full run of show"
       glyph="nkyinkyim"
-      sub="One day. One venue. Three tracks. Here is how AWS Community Day Ghana 2026 unfolds."
+      sub="One day, one venue, three tracks. Here is how AWS Community Day Ghana 2026 runs."
     />
 
     {/* Cloud Horror Stories callout */}
@@ -72,10 +72,9 @@ const AgendaPage = () => (
                 Mistakes and Anti-Patterns Not to be Repeated
               </div>
               <p style={{ fontSize: 15, lineHeight: 1.65, color: "rgba(255,255,255,0.78)", margin: 0, maxWidth: 640 }}>
-                A recurring lightning-talk thread woven through the breakout sessions. Community members share
-                real-world cloud mistakes, costly misconfigurations, and hard-won lessons from production — so
-                the rest of us don't have to learn them the hard way. The Sankofa symbol reminds us: it is not
-                wrong to go back and fetch what you forgot. Submissions open via the CFP.
+                A lightning-talk thread running through the breakout sessions. Community members share
+                real cloud mistakes, costly misconfigurations, and lessons from production. The Sankofa symbol
+                reminds us: it is not wrong to go back and fetch what you forgot. Submit yours through the CFP.
               </p>
             </div>
           </div>
