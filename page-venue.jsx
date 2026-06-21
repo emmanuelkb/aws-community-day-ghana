@@ -74,7 +74,7 @@ const VenuePage = () => (
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <SectionEyebrow>Venue details</SectionEyebrow>
           <SectionHeadline size="large" style={{ marginBottom: 40 }}>The essentials</SectionHeadline>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, maxWidth: 860, marginTop: 40 }}>
+          <div className="venue-facts-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, maxWidth: 860, marginTop: 40 }}>
             {VENUE_FACTS.map(([k, v, sub], i) => (
               <div key={k} style={{
                 padding: "28px 0",

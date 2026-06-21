@@ -81,7 +81,7 @@ const WhySponsorBand = () => {
     ["300", "In-person builders, founders & students"],
     ["12+", "Sessions across 3 tracks"],
     ["3", "Verticals — FinTech · EdTech · AgriTech"],
-    ["∞", "Livestream + 72-hr social clips + post-event report"],
+    ["Live", "Livestream + 72-hr social clips + post-event report"],
   ];
   return (
     <section style={{ background: TOKENS.navy, color: "#fff" }}>
@@ -97,7 +97,7 @@ const WhySponsorBand = () => {
         </Reveal>
       </div>
       {/* Stat band — reuses hero meta-band grid pattern */}
-      <div style={{
+      <div className="stat-band" style={{
         display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
         borderTop: "1px solid rgba(255,255,255,0.16)",
       }}>

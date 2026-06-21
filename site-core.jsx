@@ -348,6 +348,11 @@ const Reveal = ({ children, delay = 0, as = "div", style = {} }) => {
   const ref = React.useRef(null);
   const [shown, setShown] = React.useState(false);
   React.useEffect(() => {
+    // Short-circuit for users who prefer reduced motion: show content immediately
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShown(true);
+      return;
+    }
     const el = ref.current;
     if (!el || typeof IntersectionObserver === "undefined") { setShown(true); return; }
     const io = new IntersectionObserver((entries) => {

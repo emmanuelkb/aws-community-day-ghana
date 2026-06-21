@@ -1,6 +1,6 @@
 /* page-agenda.jsx — Full Agenda page. PageHeader is defined in site-core.jsx. */
 
-const { TOKENS, PageHeader, Reveal, Adinkra, SectionEyebrow, btnPrimaryNavy } = window;
+const { TOKENS, PageHeader, Reveal, Adinkra, btnPrimaryNavy } = window;
 
 const FULL_AGENDA = [
   { time:"08:00–09:00", title:"Arrival, registration & breakfast snacks", tag:"Networking" },
