@@ -1,4 +1,4 @@
-/* Sponsors + Venue + Community + Crew + FAQ + Code of Conduct + Newsletter + Footer + Notify modal. */
+/* Sponsors + Venue + Community + Crew + FAQ + Newsletter + Notify modal. (Footer moved to site-core.jsx.) */
 
 const { TOKENS, SectionEyebrow, SectionHeadline, KenteBar, KenteStripes, Marquee } = window;
 const { btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy } = window;
