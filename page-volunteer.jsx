@@ -29,49 +29,48 @@ const FORM_SECTIONS = [
     fields: [
       "Full name",
       "Email address",
-      "Phone number",
-      "City / location",
+      "Phone number (WhatsApp preferred)",
+      "City and region of residence",
+      "LinkedIn or X (Twitter) handle (optional)",
     ],
   },
   {
     id: "B",
     title: "Background",
     fields: [
-      "Current role / occupation",
-      "Employer or institution (optional)",
-      "Years of experience in tech or community work",
-      "Have you volunteered at a tech event before? (Yes / No)",
-      "If yes, briefly describe that experience",
+      "Current role or status",
+      "AWS experience level",
+      "Have you volunteered for a tech community event before?",
+      "If yes, describe recent volunteer experience",
     ],
   },
   {
     id: "C",
     title: "Preferences",
     fields: [
-      "Which team(s) are you interested in? (select up to 2)",
-      "Why do you want to volunteer at AWS Community Day Ghana 2026?",
-      "What skills or strengths would you bring to your preferred team?",
-      "Do you have any relevant certifications or technical background? (optional)",
-      "T-shirt size (S / M / L / XL / XXL)",
+      "Which team would you most like to join? (up to 2)",
+      "What languages do you speak fluently? (English / Twi / Ga / Ewe / French / Other)",
+      "Why do you want to volunteer?",
     ],
   },
   {
     id: "D",
     title: "Logistics",
     fields: [
-      "Are you available for a pre-event briefing on 28 August 2026?",
-      "Can you arrive at the venue by 6:30 AM on 29 August 2026?",
-      "Do you have any accessibility needs we should know about? (optional)",
-      "How did you hear about the volunteer programme?",
+      "Are you available for the in-person briefing on Friday, 28 August 2026?",
+      "Are you available the full day on Saturday, 29 August 2026 from 07:00 to 19:00?",
+      "T-shirt size",
+      "Do you have any dietary restrictions or allergies?",
+      "Emergency contact name and phone number",
     ],
   },
   {
     id: "E",
     title: "Consent",
     fields: [
-      "I agree to the AWS Community Day Ghana Code of Conduct (Yes / No)",
-      "I consent to photos and video taken during the event being used for community promotion (Yes / No)",
-      "I confirm all information provided is accurate (Yes / No)",
+      "I agree to the volunteer code of conduct",
+      "I consent to photos being used for community promotion",
+      "How did you hear about this opportunity?",
     ],
   },
 ];
@@ -201,7 +200,7 @@ const VolunteerPage = () => (
       eyebrow="Volunteer · AWS Community Day Ghana 2026"
       title="Join the crew"
       glyph="dwennimmen"
-      sub="~25 volunteers run the day across eight teams. If you love cloud, community, and getting things done — we want you."
+      sub="~25 volunteers run the day across eight teams."
     />
 
     {/* Teams grid */}
