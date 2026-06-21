@@ -1,20 +1,6 @@
-/* page-coc.jsx — Code of Conduct page + reusable PageHeader (exported to window for Tasks 5–10) */
+/* page-coc.jsx — Code of Conduct page. PageHeader is defined in site-core.jsx. */
 
-const { TOKENS, SectionEyebrow, AkwaabaWeave, Reveal, CONTACT, Adinkra } = window;
-
-const PageHeader = ({ eyebrow, title, sub, glyph }) => (
-  <header style={{ background: TOKENS.navy, color:"#fff", padding:"148px 56px 72px", position:"relative", overflow:"hidden" }}>
-    <AkwaabaWeave opacity={0.10} tone="dark" />
-    <div style={{ maxWidth:1100, margin:"0 auto", position:"relative" }}>
-      <div style={{ display:"flex", alignItems:"center", gap:12 }}>
-        {glyph && <Adinkra name={glyph} size={26} color={TOKENS.starGold} />}
-        <SectionEyebrow dark>{eyebrow}</SectionEyebrow>
-      </div>
-      <h1 style={{ fontFamily:TOKENS.fontDisplay, fontSize:"clamp(40px,6vw,84px)", lineHeight:1.0, fontWeight:800, textTransform:"uppercase", letterSpacing:"-0.015em", margin:"18px 0 0" }}>{title}</h1>
-      {sub && <p style={{ fontSize:18, color:"rgba(255,255,255,0.78)", maxWidth:620, marginTop:20, lineHeight:1.55 }}>{sub}</p>}
-    </div>
-  </header>
-);
+const { TOKENS, PageHeader, Reveal, CONTACT } = window;
 
 const COC = [
   ["Our pledge", "AWS Community Day Ghana is dedicated to a harassment-free, welcoming experience for everyone, regardless of gender, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, or technical background."],
@@ -41,4 +27,4 @@ const CoCPage = () => (
   </div>
 );
 
-Object.assign(window, { CoCPage, PageHeader });
+Object.assign(window, { CoCPage });

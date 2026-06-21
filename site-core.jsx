@@ -316,6 +316,21 @@ const AkwaabaWeave = ({ opacity = 0.08, drift = true, tone = "light" }) => {
   );
 };
 
+/* ───────────────────── PageHeader (shared page hero) ───────────────────── */
+const PageHeader = ({ eyebrow, title, sub, glyph }) => (
+  <header style={{ background: TOKENS.navy, color:"#fff", padding:"148px 56px 72px", position:"relative", overflow:"hidden" }}>
+    <AkwaabaWeave opacity={0.10} tone="dark" />
+    <div style={{ maxWidth:1100, margin:"0 auto", position:"relative" }}>
+      <div style={{ display:"flex", alignItems:"center", gap:12 }}>
+        {glyph && <Adinkra name={glyph} size={26} color={TOKENS.starGold} />}
+        <SectionEyebrow dark>{eyebrow}</SectionEyebrow>
+      </div>
+      <h1 style={{ fontFamily:TOKENS.fontDisplay, fontSize:"clamp(40px,6vw,84px)", lineHeight:1.0, fontWeight:800, textTransform:"uppercase", letterSpacing:"-0.015em", margin:"18px 0 0" }}>{title}</h1>
+      {sub && <p style={{ fontSize:18, color:"rgba(255,255,255,0.78)", maxWidth:620, marginTop:20, lineHeight:1.55 }}>{sub}</p>}
+    </div>
+  </header>
+);
+
 /* ───────────────────── Reveal scroll component ───────────────────── */
 const Reveal = ({ children, delay = 0, as = "div", style = {} }) => {
   const ref = React.useRef(null);
@@ -448,5 +463,5 @@ Object.assign(window, {
   Adinkra, ADINKRA_MEANING, AkwaabaWeave, Reveal,
   CONTACT, LUMA_URL, CFP_URL, VOLUNTEER_URL,
   btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy,
-  Footer, NotifyModal,
+  Footer, NotifyModal, PageHeader,
 });
