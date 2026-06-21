@@ -9,3 +9,5 @@ docs/
 kit-test-*.png
 screenshots/1440px-*.png
 screenshots/390px-*.png
+uploads/
+.thumbnail
