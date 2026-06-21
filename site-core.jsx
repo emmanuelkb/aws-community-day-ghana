@@ -103,7 +103,7 @@ const SectionEyebrow = ({ children, color = TOKENS.terracotta, dark = false }) =
 
 /* ───────────────────── Section headline ─────────────────────
    The Bay Area pattern: tight, uppercase, Inter 800, with optional accent line. */
-const SectionHeadline = ({ children, dark = false, size = "regular" }) => {
+const SectionHeadline = ({ children, dark = false, size = "regular", style = {} }) => {
   const fontSize = size === "large"
     ? "clamp(40px, 6vw, 88px)"
     : "clamp(32px, 4.6vw, 64px)";
@@ -116,6 +116,7 @@ const SectionHeadline = ({ children, dark = false, size = "regular" }) => {
       textTransform: "uppercase",
       margin: "20px 0 0",
       maxWidth: 1100,
+      ...style,
     }}>
       {children}
     </h2>
