@@ -159,14 +159,22 @@ const Countdown = ({ targetDate }) => {
 };
 
 /* ───────────────────── Nav ───────────────────── */
-const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false }) => {
+const NAV_LINKS = [
+  ["About",     "/index.html#about"],
+  ["Agenda",    "/agenda.html"],
+  ["Speakers",  "/speakers.html"],
+  ["Sponsors",  "/sponsors.html"],
+  ["Volunteer", "/volunteer.html"],
+  ["FAQ",       "/index.html#faq"],
+];
+
+const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active = "" }) => {
   const [scrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const links = [["About", "about"], ["Tracks", "tracks"], ["Speakers", "speakers"], ["Agenda", "agenda"], ["Sponsors", "sponsors"], ["FAQ", "faq"]];
 
   // When over the dark hero (not scrolled), use light text and translucent dark surface.
   // After scroll, snap to the page's normal cream nav.
@@ -186,17 +194,25 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false }) => {
                   : (onDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent"),
       display: "flex", justifyContent: "space-between", alignItems: "center",
     }}>
-      <a href="#top" style={{ textDecoration: "none" }}>
+      <a href="/index.html" style={{ textDecoration: "none" }}>
         <Wordmark compact={scrolled} tone={onDark ? "light" : "dark"} />
       </a>
       <div className="nav-links" style={{ display: "flex", gap: 28, fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-        {links.map(([l, id]) => (
-          <a key={id} href={`#${id}`} style={{ color: textColor, textDecoration: "none", opacity: 0.78 }}
-             onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
-             onMouseLeave={(e) => e.currentTarget.style.opacity = 0.78}>
-            {l}
-          </a>
-        ))}
+        {NAV_LINKS.map(([l, href]) => {
+          const isActive = active && active === href;
+          return (
+            <a key={href} href={href} style={{
+              color: textColor, textDecoration: "none",
+              opacity: isActive ? 1 : 0.78,
+              borderBottom: isActive ? `2px solid ${TOKENS.awsOrange}` : "2px solid transparent",
+              paddingBottom: 2,
+            }}
+              onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+              onMouseLeave={(e) => e.currentTarget.style.opacity = isActive ? 1 : 0.78}>
+              {l}
+            </a>
+          );
+        })}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
         <button onClick={onRegister} className="nav-cta" style={{
@@ -226,7 +242,6 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false }) => {
 
 /* ───────────────────── Mobile menu drawer ───────────────────── */
 const MobileMenu = ({ open, onClose, onRegister }) => {
-  const links = [["About", "about"], ["Tracks", "tracks"], ["Speakers", "speakers"], ["Agenda", "agenda"], ["Sponsors", "sponsors"], ["FAQ", "faq"]];
   return (
     <div style={{
       position: "fixed", inset: 0, zIndex: 99,
@@ -237,8 +252,8 @@ const MobileMenu = ({ open, onClose, onRegister }) => {
       display: "flex", flexDirection: "column",
     }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        {links.map(([l, id]) => (
-          <a key={id} href={`#${id}`} onClick={onClose} style={{
+        {NAV_LINKS.map(([l, href]) => (
+          <a key={href} href={href} onClick={onClose} style={{
             color: "#fff", textDecoration: "none",
             fontFamily: "'Inter', sans-serif", fontSize: 36, fontWeight: 800,
             letterSpacing: "-0.01em", textTransform: "uppercase",
@@ -325,6 +340,57 @@ const Reveal = ({ children, delay = 0, as = "div", style = {} }) => {
   );
 };
 
+/* ───────────────────── Footer (shared across all pages) ───────────────────── */
+const Footer = () => (
+  <footer style={{ background: TOKENS.navy2, color: "rgba(255,255,255,0.65)", padding: "80px 56px 40px" }}>
+    <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, paddingBottom: 40, borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="footer-grid">
+        <div>
+          <div style={{ color: "#fff", display: "flex", alignItems: "center", gap: 10 }}>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="1.5" y="1.5" width="29" height="29" rx="7" stroke="#fff" strokeWidth="1.5" />
+              <path d="M8 21 L16 9 L24 21 M11.5 16.5 L20.5 16.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="square" />
+            </svg>
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>AWS Community Day</div>
+              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginTop: 2, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>Ghana · 29 Aug 2026</div>
+            </div>
+          </div>
+          <p style={{ fontSize: 13, lineHeight: 1.6, marginTop: 20, maxWidth: 360 }}>
+            A community-led conference for cloud builders in Ghana, organised by AWS User Group Accra. Independent, free, and run by volunteers.
+          </p>
+          <div style={{ marginTop: 20, fontSize: 13 }}>
+            <a href={`mailto:${CONTACT}`} style={{ color: TOKENS.starGold, textDecoration: "none", fontWeight: 600 }}>{CONTACT}</a>
+          </div>
+          <div style={{ marginTop: 20, fontSize: 11, opacity: 0.5 }}>
+            "AWS" and the AWS logo are trademarks of Amazon.com, Inc. This community event is organised by AWS User Group Accra.
+          </div>
+        </div>
+        {[
+          ["Event", [["About", "/index.html#about"], ["Agenda", "/agenda.html"], ["Speakers", "/speakers.html"], ["Venue", "/venue.html"]]],
+          ["Get involved", [["Register", "/index.html#top"], ["Speak", "/cfp.html"], ["Sponsor", "/sponsors.html"], ["Volunteer", "/volunteer.html"]]],
+          ["More", [["FAQ", "/index.html#faq"], ["Community", "/index.html#community"], ["Code of conduct", "/code-of-conduct.html"], ["Contact", `mailto:${CONTACT}`]]],
+        ].map(([t, links]) => (
+          <div key={t}>
+            <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginBottom: 16 }}>{t}</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {links.map(([l, h]) => (
+                <a key={l} href={h} style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontSize: 13 }}>{l}</a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div id="coc" style={{ paddingTop: 32, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
+        <div style={{ fontSize: 12, opacity: 0.6, maxWidth: 620, lineHeight: 1.6 }}>
+          <strong style={{ color: "rgba(255,255,255,0.85)" }}>Code of conduct.</strong> We're committed to a harassment-free, inclusive event for everyone. Harassment of any kind will not be tolerated. The full policy follows the AWS Community Day code of conduct — read it before you attend.
+        </div>
+        <div style={{ fontSize: 11, opacity: 0.5 }}>© 2026 AWS Community Day Ghana · Made in Accra</div>
+      </div>
+    </div>
+  </footer>
+);
+
 Object.assign(window, {
   TOKENS, Wordmark, KenteStripes, KenteBar, KenteDot,
   SectionEyebrow, SectionHeadline,
@@ -332,4 +398,5 @@ Object.assign(window, {
   Adinkra, ADINKRA_MEANING, AkwaabaWeave, Reveal,
   CONTACT, LUMA_URL, CFP_URL, VOLUNTEER_URL,
   btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy,
+  Footer,
 });
