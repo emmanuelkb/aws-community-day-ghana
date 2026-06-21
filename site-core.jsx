@@ -190,7 +190,7 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active 
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-      padding: scrolled ? "14px 40px" : "22px 40px",
+      padding: scrolled ? "12px 40px" : "18px 40px",
       transition: "all .3s ease",
       background: scrolled ? "rgba(250,246,238,0.92)"
                 : (onDark ? "rgba(31,42,61,0.4)" : "transparent"),
@@ -199,8 +199,12 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active 
                   : (onDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent"),
       display: "flex", justifyContent: "space-between", alignItems: "center",
     }}>
-      <a href="/index.html" style={{ textDecoration: "none" }}>
-        <Wordmark compact={scrolled} tone={onDark ? "light" : "dark"} />
+      <a href="/index.html" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center" }}>
+        <img
+          src={onDark ? "/assets/logo-nav-light.svg" : "/assets/logo-nav-dark.svg"}
+          alt="AWS Community Day Ghana — Accra"
+          style={{ height: scrolled ? 46 : 60, width: "auto", display: "block", transition: "height .3s ease" }}
+        />
       </a>
       <div className="nav-links" style={{ display: "flex", gap: 28, fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>
         {NAV_LINKS.map(([l, href]) => {
