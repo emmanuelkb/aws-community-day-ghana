@@ -20,7 +20,18 @@ const TOKENS = {
   awsOrange: "#FF9900",
   starGold: "#FFC857",
   green: "#2C6B4F",
+  fontDisplay: "'Bricolage Grotesque', 'Inter', sans-serif",
 };
+
+const CONTACT = "awsaccrausergroup@gmail.com";
+const LUMA_URL = "#";       /* TODO: real Luma event URL */
+const CFP_URL = "#";        /* TODO: real CFP Google Form URL */
+const VOLUNTEER_URL = "#";  /* TODO: real Volunteer Google Form URL */
+
+const btnPrimary = () => ({ background: TOKENS.terracotta, color: "#fff", border: 0, padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block", letterSpacing: "0.08em", textTransform: "uppercase" });
+const btnGhost = () => ({ background: "transparent", color: TOKENS.ink, border: `1px solid ${TOKENS.ink}`, padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block", letterSpacing: "0.08em", textTransform: "uppercase" });
+const btnPrimaryNavy = () => ({ background: TOKENS.awsOrange, color: TOKENS.navy, border: 0, padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block", letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap" });
+const btnGhostNavy = () => ({ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.5)", padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block", letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap" });
 
 /* ───────────────────── Wordmark (Logo B, compact) ───────────────────── */
 const Wordmark = ({ tone = "dark", compact = false }) => {
@@ -35,7 +46,7 @@ const Wordmark = ({ tone = "dark", compact = false }) => {
         <path fill={TOKENS.awsOrange} fillRule="evenodd" clipRule="evenodd" d="M287.2 128.1c-4.2-5.4-27.8-2.6-38.5-1.3-3.2.4-3.7-2.4-.8-4.5 18.8-13.2 49.7-9.4 53.3-5 3.6 4.5-1 35.4-18.6 50.2-2.7 2.3-5.3 1.1-4.1-1.9 4-9.9 12.9-32.2 8.7-37.5z"/>
       </svg>
       <div style={{ width: 1, height: 26, background: tone === "light" ? "rgba(255,255,255,0.25)" : "rgba(26,20,16,0.2)" }} />
-      <div style={{ lineHeight: 1.15, fontWeight: 800, letterSpacing: "0.02em", textTransform: "uppercase" }}>
+      <div style={{ lineHeight: 1.15, fontWeight: 800, letterSpacing: "0.02em", textTransform: "uppercase", fontFamily: TOKENS.fontDisplay }}>
         <div style={{ fontSize: compact ? 12 : 13 }}>Community Day</div>
         <div style={{ fontSize: compact ? 9 : 10, color: ghanaCol, marginTop: 3, fontWeight: 700, letterSpacing: "0.16em" }}>Ghana · 2026</div>
       </div>
@@ -93,7 +104,7 @@ const SectionHeadline = ({ children, dark = false, size = "regular" }) => {
     : "clamp(32px, 4.6vw, 64px)";
   return (
     <h2 style={{
-      fontFamily: "'Inter', sans-serif",
+      fontFamily: TOKENS.fontDisplay,
       fontSize, lineHeight: 1.0, fontWeight: 800,
       color: dark ? "#fff" : TOKENS.ink,
       letterSpacing: "-0.015em",
@@ -244,8 +255,81 @@ const MobileMenu = ({ open, onClose, onRegister }) => {
   );
 };
 
+/* ───────────────────── Adinkra glyph set ───────────────────── */
+const ADINKRA_MEANING = {
+  sankofa:    { label: "Sankofa",    meaning: "Return and fetch it — learn from the past" },
+  gyenyame:   { label: "Gye Nyame",  meaning: "Except for God — the omnipotence of the divine" },
+  dwennimmen: { label: "Dwennimmen", meaning: "Ram's horns — strength with humility" },
+  nkyinkyim:  { label: "Nkyinkyim",  meaning: "Twisting — adaptability and resolve on the journey" },
+};
+
+const Adinkra = ({ name = "gyenyame", size = 28, color = "currentColor", title }) => {
+  const m = ADINKRA_MEANING[name] || ADINKRA_MEANING.gyenyame;
+  const paths = {
+    // Geometric, recognizable interpretations rendered on a 100x100 grid.
+    // sankofa: bird with head turned back — simplified as a heart-loop shape with a tail arrow
+    sankofa:    "M50 12c-20 0-32 14-32 31 0 16 12 27 26 27 9 0 16-5 16-13 0-6-4-10-10-10-4 0-7 2-7 6h8c0 1-1 2-1 2-3 0-5-2-5-5 0-4 4-7 9-7 7 0 12 6 12 14 0 11-10 19-23 19v8l-18-14 18-14v8c8 0 13-5 13-12 0-12-9-21-21-21-15 0-26 11-26 25h-8c0-21 16-36 39-36 1 0 2 0 3 .1V12z",
+    // gyenyame: concentric rings with a cross — simplified as circle + inner circle + crosshairs
+    gyenyame:   "M50 8c-6 0-11 5-11 11 0 4 2 8 6 10-14 3-24 14-24 28 0 16 13 25 29 25s29-9 29-25c0-14-10-25-24-28 4-2 6-6 6-10 0-6-5-11-11-11zm0 30c10 0 19 7 19 19 0 11-9 17-19 17s-19-6-19-17c0-12 9-19 19-19z",
+    // dwennimmen: two ram horns facing outward — two C-shapes mirrored
+    dwennimmen: "M30 30c-11 0-19 9-19 20s8 20 19 20c8 0 15-5 18-13 3 8 10 13 18 13 11 0 19-9 19-20s-8-20-19-20c-6 0-11 3-14 8v-14h-8v14c-3-5-8-8-14-8zm0 10c6 0 10 5 10 10s-4 10-10 10-10-5-10-10 4-10 10-10zm40 0c6 0 10 5 10 10s-4 10-10 10-10-5-10-10 4-10 10-10z",
+    // nkyinkyim: zigzag/twist — two S-curves side by side
+    nkyinkyim:  "M20 80c0-14 12-18 12-30S20 34 20 22h10c0 9 12 13 12 28S30 66 30 80zM58 80c0-14 12-18 12-30S58 34 58 22h10c0 9 12 13 12 28S68 66 68 80z",
+  };
+  return (
+    <svg viewBox="0 0 100 100" width={size} height={size} role="img" aria-label={`${m.label} — ${m.meaning}`} style={{ display: "block" }}>
+      <title>{title || `${m.label} — ${m.meaning}`}</title>
+      <path d={paths[name] || paths.gyenyame} fill={color} />
+    </svg>
+  );
+};
+
+/* ───────────────────── AkwaabaWeave background ───────────────────── */
+const AkwaabaWeave = ({ opacity = 0.08, drift = true, tone = "light" }) => {
+  const warp = tone === "light"
+    ? "repeating-linear-gradient(90deg, #C44536 0 14px, transparent 14px 28px), repeating-linear-gradient(90deg, transparent 0 28px, #E8B23A 28px 34px), repeating-linear-gradient(0deg, #1B3A6B 0 10px, transparent 10px 30px)"
+    : "repeating-linear-gradient(90deg, rgba(255,200,87,0.5) 0 14px, transparent 14px 28px), repeating-linear-gradient(0deg, rgba(196,69,54,0.5) 0 10px, transparent 10px 30px)";
+  return (
+    <div aria-hidden style={{
+      position: "absolute", inset: 0, opacity, pointerEvents: "none", overflow: "hidden",
+    }}>
+      <div style={{
+        position: "absolute", inset: "-20%", backgroundImage: warp, backgroundSize: "48px 48px",
+        animation: drift ? "weave-drift 60s linear infinite" : "none",
+      }} />
+    </div>
+  );
+};
+
+/* ───────────────────── Reveal scroll component ───────────────────── */
+const Reveal = ({ children, delay = 0, as = "div", style = {} }) => {
+  const ref = React.useRef(null);
+  const [shown, setShown] = React.useState(false);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") { setShown(true); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { setShown(true); io.disconnect(); } });
+    }, { threshold: 0.12 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const Tag = as;
+  return (
+    <Tag ref={ref} className="reveal" style={{
+      ...style,
+      opacity: shown ? 1 : 0,
+      transform: shown ? "none" : "translateY(18px)",
+      transition: `opacity .6s ease ${delay}ms, transform .6s ease ${delay}ms`,
+    }}>{children}</Tag>
+  );
+};
+
 Object.assign(window, {
   TOKENS, Wordmark, KenteStripes, KenteBar, KenteDot,
   SectionEyebrow, SectionHeadline,
   Countdown, Nav, MobileMenu,
+  Adinkra, ADINKRA_MEANING, AkwaabaWeave, Reveal,
+  CONTACT, LUMA_URL, CFP_URL, VOLUNTEER_URL,
+  btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy,
 });
