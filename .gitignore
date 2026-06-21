@@ -1,0 +1,6 @@
+.DS_Store
+.playwright-mcp/
+site.png
+viewport.png
+_kit-test.html
+.superpowers/

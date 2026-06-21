@@ -1,0 +1,298 @@
+/* Hero + Marquee + About + What-to-Expect + Tracks.
+   Bold navy hero (Toronto/Bay Area) enriched with Ecuador-style elements:
+   edition badge, countdown, marquee ticker, numbered feature cards.
+   Content from the action doc: Sat 29 Aug 2026, Accra, AWS User Group Accra. */
+
+const { TOKENS, KenteStripes, KenteBar, SectionEyebrow, SectionHeadline } = window;
+
+const EVENT_DATE = "2026-08-29T08:00:00+00:00";
+const LUMA_URL = "#"; /* TODO: replace with the real Luma event URL when available */
+
+/* ───── Ghanaian black star ───── */
+const StarPath = (props) => (
+  <path d="M50 6 L61 38.5 L96 38.5 L67.5 58.5 L78.5 92 L50 71.5 L21.5 92 L32.5 58.5 L4 38.5 L39 38.5 Z" {...props}/>
+);
+
+/* AWS Smile wordmark */
+const AwsSmile = ({ wordmark = "#fff", smile = "#FF9900", w = 130 }) => (
+  <svg viewBox="0 0 304 182" width={w} height={w * 0.6} aria-label="aws">
+    <path fill={wordmark} d="M86.4 66.4c0 3.7.4 6.7 1.1 8.9.8 2.2 1.8 4.6 3.2 7.2.5.8.7 1.6.7 2.3 0 1-.6 2-1.9 3l-6.3 4.2c-.9.6-1.8.9-2.6.9-1 0-2-.5-3-1.4-1.4-1.5-2.6-3.1-3.6-4.7-1-1.7-2-3.6-3.1-5.9-7.8 9.2-17.6 13.8-29.4 13.8-8.4 0-15.1-2.4-20-7.2-4.9-4.8-7.4-11.2-7.4-19.2 0-8.5 3-15.4 9.1-20.6 6.1-5.2 14.2-7.8 24.5-7.8 3.4 0 6.9.3 10.6.8 3.7.5 7.5 1.3 11.5 2.2v-7.3c0-7.6-1.6-12.9-4.7-16-3.2-3.1-8.6-4.6-16.3-4.6-3.5 0-7.1.4-10.8 1.3-3.7.9-7.3 2-10.8 3.4-1.6.7-2.8 1.1-3.5 1.3-.7.2-1.2.3-1.6.3-1.4 0-2.1-1-2.1-3.1v-4.9c0-1.6.2-2.8.7-3.5.5-.7 1.4-1.4 2.8-2.1 3.5-1.8 7.7-3.3 12.6-4.5 4.9-1.3 10.1-1.9 15.6-1.9 11.9 0 20.6 2.7 26.2 8.1 5.5 5.4 8.3 13.6 8.3 24.6v32.4zM45.8 81.6c3.3 0 6.7-.6 10.3-1.8 3.6-1.2 6.8-3.4 9.5-6.4 1.6-1.9 2.8-4 3.4-6.4.6-2.4 1-5.3 1-8.7v-4.2c-2.9-.7-6-1.3-9.2-1.7-3.2-.4-6.3-.6-9.4-.6-6.7 0-11.6 1.3-14.9 4-3.3 2.7-4.9 6.5-4.9 11.5 0 4.7 1.2 8.2 3.7 10.6 2.4 2.5 5.9 3.7 10.5 3.7zm80.3 10.8c-1.8 0-3-.3-3.8-1-.8-.6-1.5-2-2.1-3.9L96.7 10.2c-.6-2-.9-3.3-.9-4 0-1.6.8-2.5 2.4-2.5h9.8c1.9 0 3.2.3 3.9 1 .8.6 1.4 2 2 3.9l16.8 66.2 15.6-66.2c.5-2 1.1-3.3 1.9-3.9.8-.6 2.2-1 4-1h8c1.9 0 3.2.3 4 1 .8.6 1.5 2 1.9 3.9l15.8 67 17.3-67c.6-2 1.3-3.3 2-3.9.8-.6 2.1-1 3.9-1h9.3c1.6 0 2.5.8 2.5 2.5 0 .5-.1 1-.2 1.6-.1.6-.3 1.4-.7 2.5l-24.1 77.3c-.6 2-1.3 3.3-2.1 3.9-.8.6-2.1 1-3.8 1h-8.6c-1.9 0-3.2-.3-4-1-.8-.7-1.5-2-1.9-4L156 23l-15.4 64.4c-.5 2-1.1 3.3-1.9 4-.8.7-2.2 1-4 1h-8.6zm128.5 2.7c-5.2 0-10.4-.6-15.4-1.8-5-1.2-8.9-2.5-11.5-4-1.6-.9-2.7-1.9-3.1-2.8-.4-.9-.6-1.9-.6-2.8v-5.1c0-2.1.8-3.1 2.3-3.1.6 0 1.2.1 1.8.3.6.2 1.5.6 2.5 1 3.4 1.5 7.1 2.7 11 3.5 4 .8 7.9 1.2 11.9 1.2 6.3 0 11.2-1.1 14.6-3.3 3.4-2.2 5.2-5.4 5.2-9.5 0-2.8-.9-5.1-2.7-7-1.8-1.9-5.2-3.6-10.1-5.2L246 52c-7.3-2.3-12.7-5.7-16-10.2-3.3-4.4-5-9.3-5-14.5 0-4.2.9-7.9 2.7-11.1 1.8-3.2 4.2-6 7.2-8.2 3-2.3 6.4-4 10.4-5.2 4-1.2 8.2-1.7 12.6-1.7 2.2 0 4.5.1 6.7.4 2.3.3 4.4.7 6.5 1.1 2 .5 3.9 1 5.7 1.6 1.8.6 3.2 1.2 4.2 1.8 1.4.8 2.4 1.6 3 2.5.6.8.9 1.9.9 3.3v4.7c0 2.1-.8 3.2-2.3 3.2-.8 0-2.1-.4-3.8-1.2-5.7-2.6-12.1-3.9-19.2-3.9-5.7 0-10.2.9-13.3 2.8-3.1 1.9-4.7 4.8-4.7 8.9 0 2.8 1 5.2 3 7.1 2 1.9 5.7 3.8 11 5.5l14.2 4.5c7.2 2.3 12.4 5.5 15.5 9.6 3.1 4.1 4.6 8.8 4.6 14 0 4.3-.9 8.2-2.6 11.6-1.8 3.4-4.2 6.4-7.3 8.8-3.1 2.5-6.8 4.3-11.1 5.6-4.5 1.4-9.2 2.1-14.3 2.1z"/>
+    <path fill={smile} fillRule="evenodd" clipRule="evenodd" d="M273.5 143.7c-32.9 24.3-80.7 37.2-121.8 37.2-57.6 0-109.5-21.3-148.7-56.7-3.1-2.8-.3-6.6 3.4-4.4 42.4 24.6 94.7 39.5 148.8 39.5 36.5 0 76.6-7.6 113.5-23.2 5.5-2.5 10.2 3.6 4.8 7.6z"/>
+    <path fill={smile} fillRule="evenodd" clipRule="evenodd" d="M287.2 128.1c-4.2-5.4-27.8-2.6-38.5-1.3-3.2.4-3.7-2.4-.8-4.5 18.8-13.2 49.7-9.4 53.3-5 3.6 4.5-1 35.4-18.6 50.2-2.7 2.3-5.3 1.1-4.1-1.9 4-9.9 12.9-32.2 8.7-37.5z"/>
+  </svg>
+);
+
+/* Logo B lockup */
+const HeroLockup = () => (
+  <div style={{ textAlign: "center", fontFamily: "'Inter', sans-serif" }}>
+    <AwsSmile w={140} />
+    <div style={{
+      marginTop: 22, fontSize: "clamp(48px, 8vw, 104px)", lineHeight: 0.95, fontWeight: 800,
+      letterSpacing: "0.005em", color: "#fff", textTransform: "uppercase",
+    }}>
+      Community Day
+    </div>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginTop: 18 }}>
+      <div style={{ height: 1.5, width: 100, background: "rgba(255,255,255,0.55)" }} />
+      <div style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+        <svg viewBox="0 0 100 100" style={{
+          position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)",
+          width: 116, height: 116, opacity: 0.14, pointerEvents: "none",
+        }}>
+          <StarPath fill="#fff"/>
+        </svg>
+        <div style={{
+          position: "relative", fontSize: 26, letterSpacing: "0.16em", textTransform: "uppercase",
+          color: TOKENS.starGold, fontWeight: 800, padding: "0 6px",
+        }}>Accra</div>
+      </div>
+      <div style={{ height: 1.5, width: 100, background: "rgba(255,255,255,0.55)" }} />
+    </div>
+  </div>
+);
+
+/* ───── Marquee ticker (Ecuador-style) ───── */
+const Marquee = ({ items, bg = TOKENS.navy2, color = "rgba(255,255,255,0.9)", accent = TOKENS.starGold, speed = 38, border = "rgba(255,255,255,0.12)" }) => (
+  <div style={{ overflow: "hidden", background: bg, borderTop: `1px solid ${border}`, borderBottom: `1px solid ${border}`, padding: "16px 0" }}>
+    <div style={{ display: "flex", gap: 44, animation: `marquee ${speed}s linear infinite`, whiteSpace: "nowrap", width: "max-content" }}>
+      {[...items, ...items, ...items].map((it, i) => (
+        <span key={i} style={{ display: "flex", alignItems: "center", gap: 44, fontSize: 15, fontWeight: 600, letterSpacing: "0.04em", color, textTransform: "uppercase" }}>
+          {it}
+          <span aria-hidden style={{ width: 9, height: 9, background: accent, borderRadius: 2, transform: "rotate(45deg)", display: "inline-block" }} />
+        </span>
+      ))}
+    </div>
+  </div>
+);
+
+/* Countdown for navy hero */
+const CountdownNavy = ({ targetDate }) => {
+  const [now, setNow] = React.useState(Date.now());
+  React.useEffect(() => { const t = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t); }, []);
+  const target = targetDate ? new Date(targetDate).getTime() : null;
+  const diff = target ? Math.max(0, target - now) : null;
+  const d = diff != null ? Math.floor(diff / 86400000) : null;
+  const h = diff != null ? Math.floor((diff / 3600000) % 24) : null;
+  const m = diff != null ? Math.floor((diff / 60000) % 60) : null;
+  const s = diff != null ? Math.floor((diff / 1000) % 60) : null;
+  const cells = [["Days", d], ["Hrs", h], ["Min", m], ["Sec", s]];
+  const pad = (v) => v == null ? "––" : String(v).padStart(2, "0");
+  return (
+    <div style={{ display: "flex", gap: 14 }}>
+      {cells.map(([label, v]) => (
+        <div key={label} style={{ textAlign: "center", minWidth: 64, padding: "12px 10px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8 }}>
+          <div style={{ fontSize: 26, lineHeight: 1, fontWeight: 800, color: "#fff", fontVariantNumeric: "tabular-nums" }}>{pad(v)}</div>
+          <div style={{ fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: TOKENS.starGold, marginTop: 6, fontWeight: 700 }}>{label}</div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+/* ───────────────────── Hero ───────────────────── */
+const Hero = ({ heroVariant, onNotify }) => {
+  return (
+    <section id="top" style={{
+      position: "relative", minHeight: "100vh", overflow: "hidden",
+      background: TOKENS.navy, color: "#fff",
+      paddingTop: 116, display: "flex", flexDirection: "column",
+    }}>
+      <div style={{
+        position: "absolute", inset: 0, opacity: 0.06, pointerEvents: "none",
+        backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "44px 44px",
+      }} />
+      <div aria-hidden style={{ position: "absolute", top: 92, left: 0, height: 6, width: 220,
+        background: `linear-gradient(90deg, ${TOKENS.terracotta} 0 33%, ${TOKENS.starGold} 33% 66%, ${TOKENS.green} 66% 100%)` }}/>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "40px 56px", position: "relative", zIndex: 2, width: "100%", maxWidth: 1100, margin: "0 auto" }}>
+        {/* Edition badge */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 10, padding: "7px 8px 7px 16px",
+          borderRadius: 999, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.16)",
+          marginBottom: 34, fontSize: 12, fontWeight: 600, letterSpacing: "0.04em", color: "rgba(255,255,255,0.85)",
+        }}>
+          <span style={{ color: TOKENS.starGold, fontWeight: 700 }}>Akwaaba</span>
+          <span style={{ opacity: 0.5 }}>·</span>
+          1st Edition
+          <span style={{ background: TOKENS.terracotta, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 999 }}>Registration opens soon</span>
+        </div>
+
+        <HeroLockup />
+
+        <div style={{ marginTop: 28, fontSize: 13, letterSpacing: "0.16em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, textAlign: "center" }}>
+          Saturday 29 August 2026 &nbsp;·&nbsp; Accra, Ghana &nbsp;·&nbsp; Main Auditorium
+        </div>
+        <p style={{ marginTop: 18, fontSize: 18, color: "rgba(255,255,255,0.78)", maxWidth: 620, textAlign: "center", lineHeight: 1.5 }}>
+          By the community, for the community.
+        </p>
+
+        <div style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap", justifyContent: "center" }}>
+          <a href={LUMA_URL} target="_blank" rel="noopener" style={btnPrimaryNavy()}>Register on Luma</a>
+          <button onClick={onNotify} style={btnGhostNavy()}>Notify me</button>
+        </div>
+
+        <div style={{ marginTop: 40 }}>
+          <CountdownNavy targetDate={EVENT_DATE} />
+        </div>
+      </div>
+
+      {/* stat band */}
+      <div className="hero-meta-band" style={{
+        display: "grid", gridTemplateColumns: "repeat(4, 1fr)", position: "relative", zIndex: 2,
+        borderTop: "1px solid rgba(255,255,255,0.16)",
+      }}>
+        {[["12+", "Sessions"], ["300", "Attendees"], ["3", "Tracks"], ["1", "Workshop Track"]].map(([n, l], i) => (
+          <div key={l} style={{ padding: "24px 12px", textAlign: "center", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.12)" : "none" }}>
+            <div style={{ fontSize: 34, fontWeight: 800, letterSpacing: "-0.01em" }}>{n}</div>
+            <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginTop: 6 }}>{l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+/* Marquee strip rendered right after hero */
+const HeroMarquee = () => (
+  <Marquee items={[
+    "Keynotes", "Hands-on Workshops", "Generative AI", "Serverless", "Bedrock", "SageMaker",
+    "Lambda", "Networking", "AWS Heroes", "Community Builders", "FinTech", "EdTech", "AgriTech",
+  ]} />
+);
+
+/* ───────────────────── Buttons ───────────────────── */
+const btnPrimary = () => ({
+  background: TOKENS.terracotta, color: "#fff", border: 0,
+  padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700,
+  cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
+  letterSpacing: "0.08em", textTransform: "uppercase",
+});
+const btnGhost = () => ({
+  background: "transparent", color: TOKENS.ink,
+  border: `1px solid ${TOKENS.ink}`, padding: "17px 34px", borderRadius: 4,
+  fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
+  letterSpacing: "0.08em", textTransform: "uppercase",
+});
+const btnPrimaryNavy = () => ({
+  background: TOKENS.awsOrange, color: TOKENS.navy, border: 0,
+  padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700,
+  cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
+  letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap",
+});
+const btnGhostNavy = () => ({
+  background: "transparent", color: "#fff",
+  border: "1px solid rgba(255,255,255,0.5)", padding: "17px 34px", borderRadius: 4,
+  fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
+  letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap",
+});
+
+/* ───────────────────── About ───────────────────── */
+const About = () => (
+  <section id="about" style={{ background: TOKENS.cream, padding: "120px 56px" }}>
+    <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+      <SectionEyebrow>About the day</SectionEyebrow>
+      <SectionHeadline size="large">What is Community Day?</SectionHeadline>
+      <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, marginTop: 56, alignItems: "start" }}>
+        <div style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2 }}>
+          <p style={{ marginTop: 0 }}>
+            AWS Community Day Ghana 2026 is a one-day technology conference convened by the <strong>AWS User Group Accra</strong>. It brings together cloud practitioners, developers, students, founders, and industry leaders for a day of learning, networking, and showcasing how AWS is being applied to solve African problems.
+          </p>
+          <p>
+            Expect keynotes, panels, hands-on workshops, and breakout sessions — delivered by AWS Heroes, Community Builders, and local practitioners. Free to attend, open to everyone, and proudly hosted in Accra.
+          </p>
+        </div>
+        <div style={{ background: TOKENS.navy, color: "#fff", padding: "36px", borderRadius: 16 }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700 }}>
+            On the day
+          </div>
+          <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
+            {[
+              "2 keynotes — the state of cloud in Africa",
+              "Panels on Generative AI & cloud careers",
+              "3 parallel tracks + a hands-on workshop track",
+              "Sessions across FinTech, EdTech & AgriTech",
+              "Networking reception to close the day",
+            ].map(item => (
+              <li key={item} style={{ display: "flex", gap: 14, alignItems: "start", fontSize: 15, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: TOKENS.awsOrange, marginTop: 8, flexShrink: 0 }} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+/* ───────────────────── What to Expect (numbered) ───────────────────── */
+const WhatToExpect = () => {
+  const cards = [
+    ["01", "Technical Sessions", "Deep-dive talks on the latest AWS services, architectures, and best practices — from people who ship them in production."],
+    ["02", "Hands-on Workshops", "A dedicated workshop track where you build on real AWS workloads, not just watch a screen."],
+    ["03", "Networking", "Connect with fellow builders, founders, AWS Heroes, and the West African cloud community over jollof and coffee."],
+    ["04", "100% Free", "Community-led and free to attend, made possible by our sponsors. Open to everyone, from students to Heroes."],
+  ];
+  const accents = [TOKENS.terracotta, TOKENS.starGold, TOKENS.green, "#7BA4E8"];
+  return (
+    <section id="expect" style={{ background: TOKENS.paper, padding: "120px 56px" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <SectionEyebrow>What to expect</SectionEyebrow>
+        <SectionHeadline size="large">A full day, end to end</SectionHeadline>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginTop: 64 }} className="expect-grid">
+          {cards.map(([num, title, desc], i) => (
+            <div key={num} style={{
+              background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 16, padding: 32,
+              position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", gap: 16,
+            }}>
+              <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", color: accents[i], fontVariantNumeric: "tabular-nums" }}>/{num}</div>
+              <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 22, fontWeight: 800, color: TOKENS.ink, margin: 0, letterSpacing: "-0.01em", lineHeight: 1.1 }}>{title}</h3>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: TOKENS.ink2, margin: 0 }}>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ───────────────────── Tracks / Format ───────────────────── */
+const Tracks = () => {
+  const tracks = [
+    { num: "01", name: "Keynotes & Panels", color: TOKENS.terracotta, desc: "Two keynotes on the state of cloud in Africa, plus panels on Generative AI and cloud careers.", chips: ["State of Cloud", "GenAI panel", "Careers"] },
+    { num: "02", name: "Parallel Tracks", color: "#7BA4E8", desc: "Three concurrent breakout tracks of practitioner talks — themes span FinTech, EdTech, and AgriTech.", chips: ["Track A", "Track B", "Track C"] },
+    { num: "03", name: "Workshop Track", color: TOKENS.starGold, desc: "Hands-on labs where you build on real AWS workloads with guidance from experienced engineers.", chips: ["Hands-on", "Labs", "Build"] },
+  ];
+  return (
+    <section id="tracks" style={{ background: TOKENS.navy, color: "#fff", padding: "120px 56px", position: "relative", overflow: "hidden" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <SectionEyebrow dark>Programme format</SectionEyebrow>
+        <SectionHeadline dark size="large">How the day is structured</SectionHeadline>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 64 }} className="tracks-grid">
+          {tracks.map(t => (
+            <div key={t.num} style={{
+              background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: 16, padding: "36px 32px", position: "relative", overflow: "hidden",
+              display: "flex", flexDirection: "column", gap: 16,
+            }}>
+              <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", color: t.color }}>/{t.num}</div>
+              <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 26, lineHeight: 1.05, color: "#fff", fontWeight: 800, letterSpacing: "-0.01em", textTransform: "uppercase", margin: 0 }}>{t.name}</h3>
+              <p style={{ fontSize: 15, lineHeight: 1.55, color: "rgba(255,255,255,0.72)", margin: 0 }}>{t.desc}</p>
+              <div style={{ display: "flex", gap: 8, marginTop: "auto", paddingTop: 12, flexWrap: "wrap" }}>
+                {t.chips.map(c => (
+                  <span key={c} style={{ fontSize: 11, padding: "6px 12px", borderRadius: 999, background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.85)", border: "1px solid rgba(255,255,255,0.1)", fontWeight: 500 }}>{c}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+Object.assign(window, {
+  Hero, HeroMarquee, Marquee, About, WhatToExpect, Tracks,
+  btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy, AwsSmile, HeroLockup, StarPath,
+  EVENT_DATE, LUMA_URL,
+});
