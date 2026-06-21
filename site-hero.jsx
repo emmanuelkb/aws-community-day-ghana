@@ -3,7 +3,8 @@
    edition badge, countdown, marquee ticker, numbered feature cards.
    Content from the action doc: Sat 29 Aug 2026, Accra, AWS User Group Accra. */
 
-const { TOKENS, KenteStripes, KenteBar, SectionEyebrow, SectionHeadline } = window;
+const { TOKENS, KenteStripes, KenteBar, SectionEyebrow, SectionHeadline, AkwaabaWeave, Reveal, Adinkra } = window;
+const { btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy } = window;
 
 const EVENT_DATE = "2026-08-29T08:00:00+00:00";
 const LUMA_URL = "#"; /* TODO: replace with the real Luma event URL when available */
@@ -29,6 +30,7 @@ const HeroLockup = () => (
     <div style={{
       marginTop: 22, fontSize: "clamp(48px, 8vw, 104px)", lineHeight: 0.95, fontWeight: 800,
       letterSpacing: "0.005em", color: "#fff", textTransform: "uppercase",
+      fontFamily: TOKENS.fontDisplay,
     }}>
       Community Day
     </div>
@@ -97,10 +99,7 @@ const Hero = ({ heroVariant, onNotify }) => {
       background: TOKENS.navy, color: "#fff",
       paddingTop: 116, display: "flex", flexDirection: "column",
     }}>
-      <div style={{
-        position: "absolute", inset: 0, opacity: 0.06, pointerEvents: "none",
-        backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "44px 44px",
-      }} />
+      <AkwaabaWeave opacity={0.10} tone="dark" />
       <div aria-hidden style={{ position: "absolute", top: 92, left: 0, height: 6, width: 220,
         background: `linear-gradient(90deg, ${TOKENS.terracotta} 0 33%, ${TOKENS.starGold} 33% 66%, ${TOKENS.green} 66% 100%)` }}/>
 
@@ -160,68 +159,44 @@ const HeroMarquee = () => (
   ]} />
 );
 
-/* ───────────────────── Buttons ───────────────────── */
-const btnPrimary = () => ({
-  background: TOKENS.terracotta, color: "#fff", border: 0,
-  padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700,
-  cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
-  letterSpacing: "0.08em", textTransform: "uppercase",
-});
-const btnGhost = () => ({
-  background: "transparent", color: TOKENS.ink,
-  border: `1px solid ${TOKENS.ink}`, padding: "17px 34px", borderRadius: 4,
-  fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
-  letterSpacing: "0.08em", textTransform: "uppercase",
-});
-const btnPrimaryNavy = () => ({
-  background: TOKENS.awsOrange, color: TOKENS.navy, border: 0,
-  padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700,
-  cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
-  letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap",
-});
-const btnGhostNavy = () => ({
-  background: "transparent", color: "#fff",
-  border: "1px solid rgba(255,255,255,0.5)", padding: "17px 34px", borderRadius: 4,
-  fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block",
-  letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap",
-});
-
 /* ───────────────────── About ───────────────────── */
 const About = () => (
   <section id="about" style={{ background: TOKENS.cream, padding: "120px 56px" }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-      <SectionEyebrow>About the day</SectionEyebrow>
-      <SectionHeadline size="large">What is Community Day?</SectionHeadline>
-      <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, marginTop: 56, alignItems: "start" }}>
-        <div style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2 }}>
-          <p style={{ marginTop: 0 }}>
-            AWS Community Day Ghana 2026 is a one-day technology conference convened by the <strong>AWS User Group Accra</strong>. It brings together cloud practitioners, developers, students, founders, and industry leaders for a day of learning, networking, and showcasing how AWS is being applied to solve African problems.
-          </p>
-          <p>
-            Expect keynotes, panels, hands-on workshops, and breakout sessions — delivered by AWS Heroes, Community Builders, and local practitioners. Free to attend, open to everyone, and proudly hosted in Accra.
-          </p>
-        </div>
-        <div style={{ background: TOKENS.navy, color: "#fff", padding: "36px", borderRadius: 16 }}>
-          <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700 }}>
-            On the day
+    <Reveal>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <SectionEyebrow>About the day</SectionEyebrow>
+        <SectionHeadline size="large">What is Community Day?</SectionHeadline>
+        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, marginTop: 56, alignItems: "start" }}>
+          <div style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2 }}>
+            <p style={{ marginTop: 0 }}>
+              AWS Community Day Ghana 2026 is a one-day technology conference convened by the <strong>AWS User Group Accra</strong>. It brings together cloud practitioners, developers, students, founders, and industry leaders for a day of learning, networking, and showcasing how AWS is being applied to solve African problems.
+            </p>
+            <p>
+              Expect keynotes, panels, hands-on workshops, and breakout sessions — delivered by AWS Heroes, Community Builders, and local practitioners. Free to attend, open to everyone, and proudly hosted in Accra.
+            </p>
           </div>
-          <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
-            {[
-              "2 keynotes — the state of cloud in Africa",
-              "Panels on Generative AI & cloud careers",
-              "3 parallel tracks + a hands-on workshop track",
-              "Sessions across FinTech, EdTech & AgriTech",
-              "Networking reception to close the day",
-            ].map(item => (
-              <li key={item} style={{ display: "flex", gap: 14, alignItems: "start", fontSize: 15, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: TOKENS.awsOrange, marginTop: 8, flexShrink: 0 }} />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div style={{ background: TOKENS.navy, color: "#fff", padding: "36px", borderRadius: 16 }}>
+            <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700 }}>
+              On the day
+            </div>
+            <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
+              {[
+                "2 keynotes — the state of cloud in Africa",
+                "Panels on Generative AI & cloud careers",
+                "3 parallel tracks + a hands-on workshop track",
+                "Sessions across FinTech, EdTech & AgriTech",
+                "Networking reception to close the day",
+              ].map(item => (
+                <li key={item} style={{ display: "flex", gap: 14, alignItems: "start", fontSize: 15, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: TOKENS.awsOrange, marginTop: 8, flexShrink: 0 }} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </Reveal>
   </section>
 );
 
@@ -236,22 +211,24 @@ const WhatToExpect = () => {
   const accents = [TOKENS.terracotta, TOKENS.starGold, TOKENS.green, "#7BA4E8"];
   return (
     <section id="expect" style={{ background: TOKENS.paper, padding: "120px 56px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <SectionEyebrow>What to expect</SectionEyebrow>
-        <SectionHeadline size="large">A full day, end to end</SectionHeadline>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginTop: 64 }} className="expect-grid">
-          {cards.map(([num, title, desc], i) => (
-            <div key={num} style={{
-              background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 16, padding: 32,
-              position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", gap: 16,
-            }}>
-              <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", color: accents[i], fontVariantNumeric: "tabular-nums" }}>/{num}</div>
-              <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 22, fontWeight: 800, color: TOKENS.ink, margin: 0, letterSpacing: "-0.01em", lineHeight: 1.1 }}>{title}</h3>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: TOKENS.ink2, margin: 0 }}>{desc}</p>
-            </div>
-          ))}
+      <Reveal>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <SectionEyebrow>What to expect</SectionEyebrow>
+          <SectionHeadline size="large">A full day, end to end</SectionHeadline>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginTop: 64 }} className="expect-grid">
+            {cards.map(([num, title, desc], i) => (
+              <div key={num} style={{
+                background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 16, padding: 32,
+                position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", gap: 16,
+              }}>
+                <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", color: accents[i], fontVariantNumeric: "tabular-nums" }}>/{num}</div>
+                <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 22, fontWeight: 800, color: TOKENS.ink, margin: 0, letterSpacing: "-0.01em", lineHeight: 1.1 }}>{title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: TOKENS.ink2, margin: 0 }}>{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };
@@ -265,34 +242,39 @@ const Tracks = () => {
   ];
   return (
     <section id="tracks" style={{ background: TOKENS.navy, color: "#fff", padding: "120px 56px", position: "relative", overflow: "hidden" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <SectionEyebrow dark>Programme format</SectionEyebrow>
-        <SectionHeadline dark size="large">How the day is structured</SectionHeadline>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 64 }} className="tracks-grid">
+      <Reveal>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <Adinkra name="dwennimmen" size={18} color={TOKENS.starGold} />
+            <SectionEyebrow dark>Programme format</SectionEyebrow>
+          </div>
+          <SectionHeadline dark size="large">How the day is structured</SectionHeadline>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 64 }} className="tracks-grid">
           {tracks.map(t => (
-            <div key={t.num} style={{
-              background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: 16, padding: "36px 32px", position: "relative", overflow: "hidden",
-              display: "flex", flexDirection: "column", gap: 16,
-            }}>
-              <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", color: t.color }}>/{t.num}</div>
-              <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 26, lineHeight: 1.05, color: "#fff", fontWeight: 800, letterSpacing: "-0.01em", textTransform: "uppercase", margin: 0 }}>{t.name}</h3>
-              <p style={{ fontSize: 15, lineHeight: 1.55, color: "rgba(255,255,255,0.72)", margin: 0 }}>{t.desc}</p>
-              <div style={{ display: "flex", gap: 8, marginTop: "auto", paddingTop: 12, flexWrap: "wrap" }}>
-                {t.chips.map(c => (
-                  <span key={c} style={{ fontSize: 11, padding: "6px 12px", borderRadius: 999, background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.85)", border: "1px solid rgba(255,255,255,0.1)", fontWeight: 500 }}>{c}</span>
-                ))}
+              <div key={t.num} style={{
+                background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: 16, padding: "36px 32px", position: "relative", overflow: "hidden",
+                display: "flex", flexDirection: "column", gap: 16,
+              }}>
+                <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.1em", color: t.color }}>/{t.num}</div>
+                <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 26, lineHeight: 1.05, color: "#fff", fontWeight: 800, letterSpacing: "-0.01em", textTransform: "uppercase", margin: 0 }}>{t.name}</h3>
+                <p style={{ fontSize: 15, lineHeight: 1.55, color: "rgba(255,255,255,0.72)", margin: 0 }}>{t.desc}</p>
+                <div style={{ display: "flex", gap: 8, marginTop: "auto", paddingTop: 12, flexWrap: "wrap" }}>
+                  {t.chips.map(c => (
+                    <span key={c} style={{ fontSize: 11, padding: "6px 12px", borderRadius: 999, background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.85)", border: "1px solid rgba(255,255,255,0.1)", fontWeight: 500 }}>{c}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };
 
 Object.assign(window, {
   Hero, HeroMarquee, Marquee, About, WhatToExpect, Tracks,
-  btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy, AwsSmile, HeroLockup, StarPath,
+  AwsSmile, HeroLockup, StarPath,
   EVENT_DATE, LUMA_URL,
 });

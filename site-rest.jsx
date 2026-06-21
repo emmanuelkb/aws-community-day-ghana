@@ -1,6 +1,6 @@
 /* Sponsors + Venue + Community + Crew + FAQ + Newsletter + Notify modal. (Footer moved to site-core.jsx.) */
 
-const { TOKENS, SectionEyebrow, SectionHeadline, KenteBar, KenteStripes, Marquee } = window;
+const { TOKENS, SectionEyebrow, SectionHeadline, KenteBar, KenteStripes, Marquee, Reveal } = window;
 const { btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy } = window;
 
 const CONTACT = "awsaccrausergroup@gmail.com";
@@ -27,24 +27,26 @@ const SponsorTier = ({ tier, color, count, names }) => (
 
 const Sponsors = () => (
   <section id="sponsors" style={{ background: TOKENS.cream, padding: "120px 0", borderTop: `1px solid ${TOKENS.line}` }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 56px" }}>
-      <SectionEyebrow>Sponsors</SectionEyebrow>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", flexWrap: "wrap", gap: 32, marginBottom: 24 }}>
-        <SectionHeadline size="large">Power the community</SectionHeadline>
-        <a href="#" style={{ ...btnGhost(), padding: "14px 22px" }}>Get the prospectus →</a>
+    <Reveal>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 56px" }}>
+        <SectionEyebrow>Sponsors</SectionEyebrow>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", flexWrap: "wrap", gap: 32, marginBottom: 24 }}>
+          <SectionHeadline size="large">Power the community</SectionHeadline>
+          <a href="/sponsors.html" style={{ ...btnGhost(), padding: "14px 22px" }}>Get the prospectus →</a>
+        </div>
+        <p style={{ fontSize: 16, lineHeight: 1.6, color: TOKENS.ink2, maxWidth: 640, marginBottom: 48 }}>
+          AWS Community Day Ghana is free to attend, made possible by sponsors. Five tiers are available — from headline Platinum to Community Partner. Reach 300+ builders, founders, and students across Ghana's cloud ecosystem.
+        </p>
+        <SponsorTier tier="Platinum" color={TOKENS.terracotta} count={1} names={["YOUR LOGO HERE"]} />
+        <SponsorTier tier="Gold" color={TOKENS.gold} count={2} names={["LOGO", "LOGO"]} />
+        <SponsorTier tier="Silver" color={TOKENS.indigo} count={3} names={["logo", "logo", "logo"]} />
+        <SponsorTier tier="Bronze" color={TOKENS.green} count={4} names={["logo", "logo", "logo", "logo"]} />
+        <SponsorTier tier="Community Partner" color={TOKENS.ink} count={5} names={Array(5).fill("·")} />
+        <div style={{ marginTop: 8, fontSize: 14, color: TOKENS.ink2 }}>
+          Interested? Email <a href={`mailto:${CONTACT}`} style={{ color: TOKENS.terracotta, fontWeight: 600 }}>{CONTACT}</a> for the sponsorship prospectus.
+        </div>
       </div>
-      <p style={{ fontSize: 16, lineHeight: 1.6, color: TOKENS.ink2, maxWidth: 640, marginBottom: 48 }}>
-        AWS Community Day Ghana is free to attend, made possible by sponsors. Five tiers are available — from headline Platinum to Community Partner. Reach 300+ builders, founders, and students across Ghana's cloud ecosystem.
-      </p>
-      <SponsorTier tier="Platinum" color={TOKENS.terracotta} count={1} names={["YOUR LOGO HERE"]} />
-      <SponsorTier tier="Gold" color={TOKENS.gold} count={2} names={["LOGO", "LOGO"]} />
-      <SponsorTier tier="Silver" color={TOKENS.indigo} count={3} names={["logo", "logo", "logo"]} />
-      <SponsorTier tier="Bronze" color={TOKENS.green} count={4} names={["logo", "logo", "logo", "logo"]} />
-      <SponsorTier tier="Community Partner" color={TOKENS.ink} count={5} names={Array(5).fill("·")} />
-      <div style={{ marginTop: 8, fontSize: 14, color: TOKENS.ink2 }}>
-        Interested? Email <a href={`mailto:${CONTACT}`} style={{ color: TOKENS.terracotta, fontWeight: 600 }}>{CONTACT}</a> for the sponsorship prospectus.
-      </div>
-    </div>
+    </Reveal>
   </section>
 );
 
@@ -52,44 +54,51 @@ const Sponsors = () => (
 const Venue = () => (
   <section id="venue" style={{ background: TOKENS.navy, color: "#fff", padding: "120px 56px", position: "relative" }}>
     <KenteBar height={4} />
-    <div style={{ maxWidth: 1280, margin: "0 auto", paddingTop: 24 }}>
-      <SectionEyebrow dark>Venue & travel</SectionEyebrow>
-      <div className="venue-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 60, marginTop: 28 }}>
-        <div>
-          <SectionHeadline dark size="large">See you in Accra</SectionHeadline>
-          <p style={{ fontSize: 17, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", marginTop: 32, maxWidth: 540 }}>
-            The day takes place at the Main Auditorium in Accra — a 300-seat venue with air conditioning, an LED stage screen, public-address system, and a standby generator. Easy to reach across the city.
-          </p>
-          <div style={{ marginTop: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
-            {[
-              ["Date", "Saturday 29 August 2026", "08:00 – 17:00"],
-              ["Venue", "Main Auditorium", "Accra, Ghana"],
-              ["Getting there", "Bolt / Trotro", "Central Accra"],
-              ["Food", "Lunch & refreshments", "Jollof · Waakye · Fried yam"],
-            ].map(([k, v, sub], i) => (
-              <div key={k} style={{
-                padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.14)",
-                paddingRight: i % 2 === 0 ? 24 : 0, paddingLeft: i % 2 === 1 ? 24 : 0,
-                borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.14)" : "none",
-              }}>
-                <div style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginBottom: 8 }}>{k}</div>
-                <div style={{ fontSize: 16, color: "#fff", fontWeight: 600 }}>{v}</div>
-                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", marginTop: 4 }}>{sub}</div>
-              </div>
-            ))}
+    <Reveal>
+      <div style={{ maxWidth: 1280, margin: "0 auto", paddingTop: 24 }}>
+        <SectionEyebrow dark>Venue & travel</SectionEyebrow>
+        <div className="venue-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 60, marginTop: 28 }}>
+          <div>
+            <SectionHeadline dark size="large">See you in Accra</SectionHeadline>
+            <p style={{ fontSize: 17, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", marginTop: 32, maxWidth: 540 }}>
+              The day takes place at the Main Auditorium in Accra — a 300-seat venue with air conditioning, an LED stage screen, public-address system, and a standby generator. Easy to reach across the city.
+            </p>
+            <div style={{ marginTop: 40, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+              {[
+                ["Date", "Saturday 29 August 2026", "08:00 – 17:00"],
+                ["Venue", "Main Auditorium", "Accra, Ghana"],
+                ["Getting there", "Bolt / Trotro", "Central Accra"],
+                ["Food", "Lunch & refreshments", "Jollof · Waakye · Fried yam"],
+              ].map(([k, v, sub], i) => (
+                <div key={k} style={{
+                  padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.14)",
+                  paddingRight: i % 2 === 0 ? 24 : 0, paddingLeft: i % 2 === 1 ? 24 : 0,
+                  borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.14)" : "none",
+                }}>
+                  <div style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginBottom: 8 }}>{k}</div>
+                  <div style={{ fontSize: 16, color: "#fff", fontWeight: 600 }}>{v}</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", marginTop: 4 }}>{sub}</div>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: 32 }}>
+              <a href="/venue.html" style={{ fontSize: 13, fontWeight: 700, color: TOKENS.starGold, textDecoration: "none", letterSpacing: "0.04em", display: "inline-flex", alignItems: "center", gap: 6 }}>
+                Directions &amp; venue details →
+              </a>
+            </div>
           </div>
-        </div>
-        <div style={{ height: 520, borderRadius: 16, position: "relative", overflow: "hidden", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)" }}>
-          <div style={{ position: "absolute", inset: 0, opacity: 0.5, backgroundImage: `radial-gradient(rgba(255,255,255,0.18) 1.5px, transparent 1.5px)`, backgroundSize: "24px 24px" }} />
-          <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: 32 }}>
-            <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginBottom: 16 }}>Map · venue confirmed soon</div>
-            <div style={{ fontSize: 52, lineHeight: 1, fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>Accra</div>
-            <div style={{ fontSize: 52, lineHeight: 1, fontWeight: 800, color: "rgba(255,255,255,0.45)", letterSpacing: "-0.02em", marginTop: 6 }}>Ghana</div>
-            <div style={{ marginTop: 22, fontSize: 12, color: "rgba(255,255,255,0.5)", letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>5.6037° N · 0.1870° W</div>
+          <div style={{ height: 520, borderRadius: 16, position: "relative", overflow: "hidden", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)" }}>
+            <div style={{ position: "absolute", inset: 0, opacity: 0.5, backgroundImage: `radial-gradient(rgba(255,255,255,0.18) 1.5px, transparent 1.5px)`, backgroundSize: "24px 24px" }} />
+            <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: 32 }}>
+              <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginBottom: 16 }}>Map · venue confirmed soon</div>
+              <div style={{ fontSize: 52, lineHeight: 1, fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>Accra</div>
+              <div style={{ fontSize: 52, lineHeight: 1, fontWeight: 800, color: "rgba(255,255,255,0.45)", letterSpacing: "-0.02em", marginTop: 6 }}>Ghana</div>
+              <div style={{ marginTop: 22, fontSize: 12, color: "rgba(255,255,255,0.5)", letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>5.6037° N · 0.1870° W</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Reveal>
   </section>
 );
 
@@ -98,29 +107,31 @@ const Community = () => {
   const groups = ["AWS User Group Accra", "AWS User Group Kumasi", "Universities & bootcamps", "Women in tech communities", "Developer meetups"];
   return (
     <section id="community" style={{ background: TOKENS.paper, padding: "120px 56px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <SectionEyebrow>Community</SectionEyebrow>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, marginTop: 24, alignItems: "center" }} className="org-grid">
-          <div>
-            <SectionHeadline size="large">Organised by AWS User Group Accra</SectionHeadline>
-            <p style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2, marginTop: 28, maxWidth: 520 }}>
-              This is a community-led event, run entirely by volunteers from Ghana's cloud community. We partner with user groups, universities, and developer communities across the country.
-            </p>
-            <a href={`mailto:${CONTACT}`} style={{ ...btnPrimary(), marginTop: 28 }}>Partner with us</a>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {groups.map((g, i) => (
-              <div key={g} style={{
-                display: "flex", alignItems: "center", gap: 16, padding: "20px 24px",
-                background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 12,
-              }}>
-                <span aria-hidden style={{ width: 10, height: 10, background: [TOKENS.terracotta, TOKENS.gold, TOKENS.green, TOKENS.indigo, TOKENS.terracotta][i], borderRadius: 2, transform: "rotate(45deg)", flexShrink: 0 }} />
-                <span style={{ fontSize: 16, fontWeight: 700, color: TOKENS.ink, letterSpacing: "-0.005em" }}>{g}</span>
-              </div>
-            ))}
+      <Reveal>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <SectionEyebrow>Community</SectionEyebrow>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, marginTop: 24, alignItems: "center" }} className="org-grid">
+            <div>
+              <SectionHeadline size="large">Organised by AWS User Group Accra</SectionHeadline>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2, marginTop: 28, maxWidth: 520 }}>
+                This is a community-led event, run entirely by volunteers from Ghana's cloud community. We partner with user groups, universities, and developer communities across the country.
+              </p>
+              <a href={`mailto:${CONTACT}`} style={{ ...btnPrimary(), marginTop: 28 }}>Partner with us</a>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {groups.map((g, i) => (
+                <div key={g} style={{
+                  display: "flex", alignItems: "center", gap: 16, padding: "20px 24px",
+                  background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 12,
+                }}>
+                  <span aria-hidden style={{ width: 10, height: 10, background: [TOKENS.terracotta, TOKENS.gold, TOKENS.green, TOKENS.indigo, TOKENS.terracotta][i], borderRadius: 2, transform: "rotate(45deg)", flexShrink: 0 }} />
+                  <span style={{ fontSize: 16, fontWeight: 700, color: TOKENS.ink, letterSpacing: "-0.005em" }}>{g}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };
@@ -130,29 +141,31 @@ const Crew = () => {
   const teams = ["Registration", "Logistics & Floor", "Speaker Care", "Technical / AV", "Social Media", "Photography", "Food & Beverage", "Sponsor Liaison"];
   return (
     <section id="crew" style={{ background: TOKENS.cream, padding: "120px 56px", borderTop: `1px solid ${TOKENS.line}` }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", flexWrap: "wrap", gap: 32 }}>
-          <div>
-            <SectionEyebrow>Join the crew</SectionEyebrow>
-            <SectionHeadline size="large">Help make it happen</SectionHeadline>
-          </div>
-          <div style={{ fontSize: 14, color: TOKENS.ink2, maxWidth: 340, lineHeight: 1.55 }}>
-            ~25 volunteers run the day across eight teams. Crew get a branded T-shirt, all meals, a certificate, and priority access to future community events.
-          </div>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginTop: 56 }} className="crew-grid">
-          {teams.map((t, i) => (
-            <div key={t} style={{
-              padding: "24px", background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 12,
-              display: "flex", flexDirection: "column", gap: 10,
-            }}>
-              <div style={{ fontSize: 12, fontWeight: 800, color: [TOKENS.terracotta, TOKENS.gold, TOKENS.green, TOKENS.indigo][i % 4], letterSpacing: "0.08em" }}>0{i + 1}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: TOKENS.ink, letterSpacing: "-0.005em" }}>{t}</div>
+      <Reveal>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", flexWrap: "wrap", gap: 32 }}>
+            <div>
+              <SectionEyebrow>Join the crew</SectionEyebrow>
+              <SectionHeadline size="large">Help make it happen</SectionHeadline>
             </div>
-          ))}
+            <div style={{ fontSize: 14, color: TOKENS.ink2, maxWidth: 340, lineHeight: 1.55 }}>
+              ~25 volunteers run the day across eight teams. Crew get a branded T-shirt, all meals, a certificate, and priority access to future community events.
+            </div>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginTop: 56 }} className="crew-grid">
+            {teams.map((t, i) => (
+              <div key={t} style={{
+                padding: "24px", background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 12,
+                display: "flex", flexDirection: "column", gap: 10,
+              }}>
+                <div style={{ fontSize: 12, fontWeight: 800, color: [TOKENS.terracotta, TOKENS.gold, TOKENS.green, TOKENS.indigo][i % 4], letterSpacing: "0.08em" }}>0{i + 1}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: TOKENS.ink, letterSpacing: "-0.005em" }}>{t}</div>
+              </div>
+            ))}
+          </div>
+          <a href="/volunteer.html" style={{ ...btnPrimary(), marginTop: 32 }}>Apply to volunteer</a>
         </div>
-        <a href="#" style={{ ...btnPrimary(), marginTop: 32 }}>Apply to volunteer</a>
-      </div>
+      </Reveal>
     </section>
   );
 };
