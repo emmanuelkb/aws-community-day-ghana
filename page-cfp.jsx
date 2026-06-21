@@ -68,7 +68,7 @@ const CFPPage = () => (
           <SectionHeadline dark size="large">How you can speak</SectionHeadline>
           <div style={{ marginTop: 48 }}>
             {FORMATS.map(([f, d, desc]) => (
-              <div key={f} style={{
+              <div key={f} className="format-row" style={{
                 padding: "24px 0",
                 borderTop: "1px solid rgba(255,255,255,0.14)",
                 display: "grid",
@@ -147,7 +147,7 @@ const CFPPage = () => (
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={CFP_URL} style={btnPrimaryNavy()}>Submit a talk</a>
-            <a href="/index.html#faq" style={btnGhostNavy()}>Speaker FAQ</a>
+            <a href="index.html#faq" style={btnGhostNavy()}>Speaker FAQ</a>
           </div>
         </div>
       </Reveal>

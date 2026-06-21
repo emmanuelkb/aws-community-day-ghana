@@ -113,7 +113,7 @@ const Speakers = () => (
         </div>
 
         <div style={{ marginTop: 24, display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-          <a href="/cfp.html" style={btnPrimary()}>Submit a talk</a>
+          <a href="cfp.html" style={btnPrimary()}>Submit a talk</a>
           <span style={{ fontSize: 13, color: TOKENS.ink2 }}>Full line-up announced closer to the event.</span>
         </div>
       </div>
@@ -180,7 +180,7 @@ const Agenda = () => (
           <div style={{ fontSize: 13, color: TOKENS.ink2 }}>
             Agenda is provisional and subject to change as speakers are confirmed.
           </div>
-          <a href="/agenda.html" style={{ fontSize: 13, fontWeight: 700, color: TOKENS.terracotta, textDecoration: "none", letterSpacing: "0.04em" }}>Full agenda →</a>
+          <a href="agenda.html" style={{ fontSize: 13, fontWeight: 700, color: TOKENS.terracotta, textDecoration: "none", letterSpacing: "0.04em" }}>Full agenda →</a>
         </div>
       </div>
     </Reveal>
@@ -201,8 +201,8 @@ const CFP = () => (
               We want practical talks grounded in real experience — FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers are welcome.
             </p>
             <div style={{ display: "flex", gap: 14, marginTop: 36, flexWrap: "wrap" }}>
-              <a href="/cfp.html" style={btnPrimaryNavy()}>Submit a talk</a>
-              <a href="/cfp.html" style={btnGhostNavy()}>Speaker FAQ</a>
+              <a href="cfp.html" style={btnPrimaryNavy()}>Submit a talk</a>
+              <a href="cfp.html" style={btnGhostNavy()}>Speaker FAQ</a>
             </div>
           </div>
           <div>
@@ -213,7 +213,7 @@ const CFP = () => (
               ["Panel", "60 min", "Submit your perspective; we curate"],
               ["Workshop", "varies", "Hands-on, build-along session"],
             ].map(([f, d, desc]) => (
-              <div key={f} style={{ padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.14)", display: "grid", gridTemplateColumns: "150px 70px 1fr", gap: 16, alignItems: "start" }}>
+              <div key={f} className="format-row" style={{ padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.14)", display: "grid", gridTemplateColumns: "150px 70px 1fr", gap: 16, alignItems: "start" }}>
                 <div style={{ fontSize: 16, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.02em" }}>{f}</div>
                 <div style={{ fontSize: 12, color: TOKENS.starGold, paddingTop: 3, fontWeight: 700 }}>{d}</div>
                 <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", paddingTop: 2, lineHeight: 1.5 }}>{desc}</div>

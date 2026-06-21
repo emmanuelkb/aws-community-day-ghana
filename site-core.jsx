@@ -166,12 +166,12 @@ const Countdown = ({ targetDate }) => {
 
 /* ───────────────────── Nav ───────────────────── */
 const NAV_LINKS = [
-  ["About",     "/index.html#about"],
-  ["Agenda",    "/agenda.html"],
-  ["Speakers",  "/speakers.html"],
-  ["Sponsors",  "/sponsors.html"],
-  ["Volunteer", "/volunteer.html"],
-  ["FAQ",       "/index.html#faq"],
+  ["About",     "index.html#about"],
+  ["Agenda",    "agenda.html"],
+  ["Speakers",  "speakers.html"],
+  ["Sponsors",  "sponsors.html"],
+  ["Volunteer", "volunteer.html"],
+  ["FAQ",       "index.html#faq"],
 ];
 
 const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active = "" }) => {
@@ -200,9 +200,9 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active 
                   : (onDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent"),
       display: "flex", justifyContent: "space-between", alignItems: "center",
     }}>
-      <a href="/index.html" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center" }}>
+      <a href="index.html" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center" }}>
         <img
-          src={onDark ? "/assets/logo-nav-light.svg" : "/assets/logo-nav-dark.svg"}
+          src={onDark ? "assets/logo-nav-light.svg" : "assets/logo-nav-dark.svg"}
           alt="AWS Community Day Ghana — Accra"
           style={{ height: scrolled ? 46 : 60, width: "auto", display: "block", transition: "height .3s ease" }}
         />
@@ -326,13 +326,6 @@ const AkwaabaWeave = ({ opacity = 0.08, drift = true, tone = "light" }) => {
   );
 };
 
-/* ───────────────────── Black Star (Ghanaian flag star) ───────────────────── */
-const BlackStar = ({ size = 80, color = "#FFC857", opacity = 0.14 }) => (
-  <svg viewBox="0 0 100 100" width={size} height={size} aria-hidden style={{ opacity }}>
-    <path d="M50 6 L61 38.5 L96 38.5 L67.5 58.5 L78.5 92 L50 71.5 L21.5 92 L32.5 58.5 L4 38.5 L39 38.5 Z" fill={color} />
-  </svg>
-);
-
 /* ───────────────────── PageHeader (shared page hero) ───────────────────── */
 const PageHeader = ({ eyebrow, title, sub, glyph }) => (
   <header style={{ background: TOKENS.navy, color:"#fff", padding:"148px 56px 72px", position:"relative", overflow:"hidden" }}>
@@ -383,7 +376,7 @@ const Footer = () => (
     <div style={{ maxWidth: 1280, margin: "0 auto" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, paddingBottom: 40, borderBottom: "1px solid rgba(255,255,255,0.1)" }} className="footer-grid">
         <div>
-          <img src="/assets/logo-accra-b.svg" alt="AWS Community Day Ghana — Accra" style={{ width: 200, height: "auto", display: "block" }} />
+          <img src="assets/logo-accra-b.svg" alt="AWS Community Day Ghana — Accra" style={{ width: 200, height: "auto", display: "block" }} />
           <p style={{ fontSize: 13, lineHeight: 1.6, marginTop: 20, maxWidth: 360 }}>
             A community-led conference for cloud builders in Ghana, organised by AWS User Group Accra. Independent, free, and run by volunteers.
           </p>
@@ -395,9 +388,9 @@ const Footer = () => (
           </div>
         </div>
         {[
-          ["Event", [["About", "/index.html#about"], ["Agenda", "/agenda.html"], ["Speakers", "/speakers.html"], ["Venue", "/venue.html"]]],
-          ["Get involved", [["Register", "/index.html#top"], ["Speak", "/cfp.html"], ["Sponsor", "/sponsors.html"], ["Volunteer", "/volunteer.html"]]],
-          ["More", [["FAQ", "/index.html#faq"], ["Community", "/index.html#community"], ["Code of conduct", "/code-of-conduct.html"], ["Contact", `mailto:${CONTACT}`]]],
+          ["Event", [["About", "index.html#about"], ["Agenda", "agenda.html"], ["Speakers", "speakers.html"], ["Venue", "venue.html"]]],
+          ["Get involved", [["Register", "index.html#top"], ["Speak", "cfp.html"], ["Sponsor", "sponsors.html"], ["Volunteer", "volunteer.html"]]],
+          ["More", [["FAQ", "index.html#faq"], ["Community", "index.html#community"], ["Code of conduct", "code-of-conduct.html"], ["Contact", `mailto:${CONTACT}`]]],
         ].map(([t, links]) => (
           <div key={t}>
             <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginBottom: 16 }}>{t}</div>
@@ -474,7 +467,6 @@ Object.assign(window, {
   SectionEyebrow, SectionHeadline,
   Countdown, Nav, MobileMenu,
   Adinkra, ADINKRA_MEANING, AkwaabaWeave, Reveal,
-  BlackStar,
   CONTACT, LUMA_URL, CFP_URL, VOLUNTEER_URL,
   btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy,
   Footer, NotifyModal, PageHeader,

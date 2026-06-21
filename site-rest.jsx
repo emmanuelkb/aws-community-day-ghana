@@ -32,7 +32,7 @@ const Sponsors = () => (
         <SectionEyebrow>Sponsors</SectionEyebrow>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", flexWrap: "wrap", gap: 32, marginBottom: 24 }}>
           <SectionHeadline size="large">Power the community</SectionHeadline>
-          <a href="/sponsors.html" style={{ ...btnGhost(), padding: "14px 22px" }}>Get the prospectus →</a>
+          <a href="sponsors.html" style={{ ...btnGhost(), padding: "14px 22px" }}>Get the prospectus →</a>
         </div>
         <p style={{ fontSize: 16, lineHeight: 1.6, color: TOKENS.ink2, maxWidth: 640, marginBottom: 48 }}>
           AWS Community Day Ghana is free to attend, funded by sponsors. Five tiers are available, from headline Platinum to Community Partner. Your brand in front of 300+ builders, founders, and students in Ghana's cloud community.
@@ -82,7 +82,7 @@ const Venue = () => (
               ))}
             </div>
             <div style={{ marginTop: 32 }}>
-              <a href="/venue.html" style={{ fontSize: 13, fontWeight: 700, color: TOKENS.starGold, textDecoration: "none", letterSpacing: "0.04em", display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <a href="venue.html" style={{ fontSize: 13, fontWeight: 700, color: TOKENS.starGold, textDecoration: "none", letterSpacing: "0.04em", display: "inline-flex", alignItems: "center", gap: 6 }}>
                 Directions &amp; venue details →
               </a>
             </div>
@@ -163,7 +163,7 @@ const Crew = () => {
               </div>
             ))}
           </div>
-          <a href="/volunteer.html" style={{ ...btnPrimary(), marginTop: 32 }}>Apply to volunteer</a>
+          <a href="volunteer.html" style={{ ...btnPrimary(), marginTop: 32 }}>Apply to volunteer</a>
         </div>
       </Reveal>
     </section>

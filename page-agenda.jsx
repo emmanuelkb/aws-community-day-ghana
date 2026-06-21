@@ -153,7 +153,7 @@ const AgendaPage = () => (
             <div style={{ fontSize: 13, color: TOKENS.ink2, fontStyle: "italic" }}>
               Provisional — subject to change as speakers are confirmed.
             </div>
-            <a href="/cfp.html" style={btnPrimaryNavy()}>Want a slot? Submit a talk</a>
+            <a href="cfp.html" style={btnPrimaryNavy()}>Want a slot? Submit a talk</a>
           </div>
         </div>
       </Reveal>
