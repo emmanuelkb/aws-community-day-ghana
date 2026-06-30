@@ -4,22 +4,22 @@ const { TOKENS, PageHeader, Reveal, Adinkra, SectionEyebrow, SectionHeadline, bt
 
 /* ── Data arrays (verbatim from task-6-brief §6.2) ── */
 const KEYNOTE_ROLES = [
-  { title: "The State of Cloud in Africa", who: "An AWS Hero, AWS Senior Developer Advocate, or AWS staff from EMEA / Sub-Saharan Africa." },
-  { title: "Building for Scale on AWS", who: "A senior technology leader (CTO, VP Engineering, or Head of Cloud) from a recognised Ghanaian or pan-African company." },
+  { title: "Keynote: Building the Backbone", who: "An AWS Hero, AWS Senior Developer Advocate, or AWS staff from EMEA or Sub-Saharan Africa." },
+  { title: "Panel: Building the Backbone", who: "A senior technology leader (CTO, VP Engineering, or Head of Cloud) joining the panel discussion." },
 ];
 
 const PANELS = [
-  { title: "African Builders on Generative AI", moderator: "AWS Community Builder or User Group Lead", seats: ["GenAI startup founder", "Enterprise ML lead", "Academic researcher", "PM applying GenAI in a regulated industry"] },
-  { title: "Cloud Careers & Community Building", moderator: "AWS Community Builder", seats: ["AWS-certified mid-career switcher", "Recruiter / talent lead", "Recent graduate now in cloud", "Community organiser"] },
+  { title: "Building the Backbone", moderator: "AWS Community Builder or User Group Lead", seats: ["Panel speaker 1 — To be announced", "Panel speaker 2 — To be announced", "Panel speaker 3 — To be announced", "Panel speaker 4 — To be announced"] },
+  { title: "Cloud Careers & Community Building", moderator: "AWS Community Builder", seats: ["Speaker 1 — To be announced", "Speaker 2 — To be announced", "Speaker 3 — To be announced", "Speaker 4 — To be announced"] },
 ];
 
 const SPEAKERS = [
-  { name: "David Quarguine", role: "Cloud Architect", topic: "PCI DSS & compliance patterns on AWS", track: "FinTech", initials: "DQ", confirmed: true },
-  { name: "Ebow Anamuah", role: "EdTech Founder / CTO", topic: "Scaling a learning platform on AWS", track: "EdTech", initials: "EA", confirmed: true },
-  { name: "Speaker TBA", role: "AgriTech engineer", topic: "IoT & satellite data pipelines on AWS", track: "AgriTech", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Fintech senior engineer", topic: "Payments, lending, or mobile money on AWS", track: "FinTech", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Serverless practitioner", topic: "A serverless pattern for learning platforms", track: "EdTech", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Data engineer", topic: "Data pipelines on AWS for agricultural use cases", track: "AgriTech", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Cloud practitioner", topic: "To be announced", track: "Cloud", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "GenAI practitioner", topic: "To be announced", track: "GenAI", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Panel speaker", topic: "Building the Backbone", track: "Panel", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Cloud engineer", topic: "To be announced", track: "Cloud", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Community Builder", topic: "Cloud careers & community", track: "Careers", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Cloud practitioner", topic: "To be announced", track: "Cloud", initials: "—", confirmed: false },
 ];
 
 /* Track tint colours matching site-program.jsx */
@@ -29,6 +29,9 @@ const TRACK_TINT = {
   AgriTech: TOKENS.green,
   GenAI:    TOKENS.gold,
   Careers:  TOKENS.indigo,
+  Cloud:    TOKENS.green,
+  Panel:    TOKENS.indigo,
+  Keynote:  TOKENS.terracotta,
 };
 
 /* ── Keynote role card (navy, TBA style) ── */
@@ -120,7 +123,7 @@ const SpeakersPage = () => (
       eyebrow="Speakers · AWS Community Day Ghana 2026"
       title="Speakers & roles"
       glyph="gyenyame"
-      sub="Keynotes, panels, and breakout talks by cloud builders across West Africa. The line-up is being confirmed. The call for speakers is open."
+      sub="Keynotes, panels, and breakout talks by cloud builders. The line-up is being confirmed. The call for speakers is open."
     />
 
     {/* Keynote roles */}
@@ -172,7 +175,7 @@ const SpeakersPage = () => (
               <SectionHeadline size="large">Speaker line-up</SectionHeadline>
             </div>
             <div style={{ fontSize: 14, color: TOKENS.ink2, maxWidth: 340, lineHeight: 1.55 }}>
-              Two speakers confirmed. More being announced as the call for speakers closes.
+              Speakers are being confirmed. The call for speakers is open — add your name to the line-up.
             </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 48 }} className="speakers-grid">

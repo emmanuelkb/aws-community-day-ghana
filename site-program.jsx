@@ -8,8 +8,8 @@ const { btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy } = window;
 const WhyAttend = () => {
   const cards = [
     ["Latest from AWS", "Hear about new services, patterns, and launches from people who use them every day."],
-    ["African use cases", "Real production stories across FinTech, EdTech, and AgriTech, built for our context."],
-    ["Community", "Meet AWS users, Heroes, and Community Builders from across West Africa."],
+    ["Real-world use cases", "Production patterns and lessons you can apply anywhere, whatever you're building."],
+    ["Community", "Meet AWS users, Heroes, and Community Builders from across the cloud community."],
     ["Free to attend", "Community-led and free, funded by our sponsors. Everyone is welcome."],
   ];
   return (
@@ -35,14 +35,14 @@ const WhyAttend = () => {
 /* ───────────────────── Speakers ─────────────────────
    Featured keynotes (TBA) + grid mixing confirmed + TBA. */
 const SPEAKERS = [
-  { name: "David Quarguine", role: "Cloud Architect", topic: "PCI DSS & compliance patterns on AWS", track: "FinTech", initials: "DQ", confirmed: true },
-  { name: "Ebow Anamuah", role: "EdTech Founder / CTO", topic: "Scaling a learning platform on AWS", track: "EdTech", initials: "EA", confirmed: true },
-  { name: "Speaker TBA", role: "AgriTech engineer", topic: "IoT & satellite data pipelines on AWS", track: "AgriTech", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "GenAI startup founder", topic: "Building with Amazon Bedrock", track: "GenAI", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Enterprise ML lead", topic: "ML in production, the hard parts", track: "GenAI", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Cloud practitioner", topic: "To be announced", track: "Keynote", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Panel speaker", topic: "Building the Backbone", track: "Panel", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Panel speaker", topic: "Building the Backbone", track: "Panel", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "GenAI practitioner", topic: "To be announced", track: "GenAI", initials: "—", confirmed: false },
+  { name: "Speaker TBA", role: "Cloud engineer", topic: "To be announced", track: "Cloud", initials: "—", confirmed: false },
   { name: "Speaker TBA", role: "Community Builder", topic: "Cloud careers & community", track: "Careers", initials: "—", confirmed: false },
 ];
-const TRACK_TINT = { FinTech: TOKENS.terracotta, EdTech: "#3B6BB8", AgriTech: TOKENS.green, GenAI: TOKENS.gold, Careers: TOKENS.indigo };
+const TRACK_TINT = { FinTech: TOKENS.terracotta, EdTech: "#3B6BB8", AgriTech: TOKENS.green, GenAI: TOKENS.gold, Careers: TOKENS.indigo, Keynote: TOKENS.terracotta, Panel: TOKENS.indigo, Cloud: TOKENS.green };
 
 const KeynoteCard = ({ title, sub }) => (
   <div style={{
@@ -104,8 +104,8 @@ const Speakers = () => (
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 56 }} className="keynote-grid">
-          <KeynoteCard title="The State of Cloud in Africa" sub="An AWS Hero, Senior Developer Advocate, or AWS Sub-Saharan Africa leader." />
-          <KeynoteCard title="Building for Scale on AWS" sub="A senior technology leader from a recognised Ghanaian or pan-African company." />
+          <KeynoteCard title="Keynote: Building the Backbone" sub="An AWS Hero, Senior Developer Advocate, or AWS representative." />
+          <KeynoteCard title="Panel: Building the Backbone" sub="A senior technology leader joining the panel discussion." />
         </div>
 
         <div className="speakers-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 16 }}>
@@ -123,22 +123,24 @@ const Speakers = () => (
 
 /* ───────────────────── Agenda (real run-of-show) ───────────────────── */
 const AGENDA = [
-  { time: "08:00", title: "Arrival, registration & breakfast snacks", tag: "Networking" },
-  { time: "09:00", title: "Opening remarks & welcome", tag: "Opening", sub: "MC + User Group Lead" },
-  { time: "09:30", title: "Opening Keynote — The State of Cloud in Africa", tag: "Keynote" },
-  { time: "10:15", title: "Keynote 2 — Building for Scale on AWS", tag: "Keynote" },
-  { time: "11:00", title: "Coffee break", tag: "Break" },
-  { time: "11:15", title: "Panel — African Builders on Generative AI", tag: "Panel", sub: "4 speakers + moderator" },
+  { time: "08:00", title: "Arrival & registration", tag: "Networking" },
+  { time: "09:00", title: "Opening remarks & welcome", tag: "Opening", sub: "MC + AWS User Group Accra Lead" },
+  { time: "09:30", title: "Keynote: Building the Backbone", tag: "Keynote" },
+  { time: "10:10", title: "Message from 1st Platinum Sponsor", tag: "Sponsor" },
+  { time: "10:20", title: "Coffee break", tag: "Break" },
+  { time: "10:40", title: "Message from 2nd Platinum Sponsor", tag: "Sponsor" },
+  { time: "11:15", title: "Panel: Building the Backbone", tag: "Panel", sub: "4 speakers + moderator" },
+  { time: "12:00", title: "Picture with panelists (all participants)", tag: "Networking" },
   { time: "12:15", title: "Lunch & networking", tag: "Networking", sub: "Jollof · Waakye · Fried yam" },
-  { time: "13:15", title: "Breakout Session 1", tag: "Breakout", tracks: ["FinTech", "EdTech", "AgriTech"] },
-  { time: "14:00", title: "Breakout Session 2", tag: "Breakout", tracks: ["FinTech", "EdTech", "AgriTech"] },
-  { time: "14:45", title: "Breakout Session 3 — community talks", tag: "Breakout", tracks: ["Track A", "Track B", "Track C"] },
-  { time: "15:30", title: "Tea break", tag: "Break" },
-  { time: "15:45", title: "Fireside — Cloud Careers & Community Building", tag: "Panel", sub: "4 speakers + moderator" },
+  { time: "12:50", title: "Message from 3rd Platinum Sponsor", tag: "Sponsor" },
+  { time: "13:00", title: "Breakout Session 1 (3 tracks, 1 hour)", tag: "Breakout", tracks: ["Track 1", "Track 2", "Track 3"] },
+  { time: "14:00", title: "Coffee break", tag: "Break" },
+  { time: "14:20", title: "Breakout Session 2 (3 tracks, 1 hour)", tag: "Breakout", tracks: ["Track 1", "Track 2", "Track 3"] },
+  { time: "15:30", title: "Town Hall: Cloud Careers & Community Building", tag: "Panel", sub: "4 speakers + moderator, audience Q&A" },
   { time: "16:30", title: "Closing ceremony, raffle & group photo", tag: "Closing" },
   { time: "17:00", title: "Networking reception", tag: "Networking" },
 ];
-const TAG_COLOR = { Keynote: TOKENS.terracotta, Panel: TOKENS.indigo, Breakout: TOKENS.green, Workshop: TOKENS.gold, Networking: "#8a7a68", Opening: TOKENS.navy, Closing: TOKENS.navy, Break: "#b3a896" };
+const TAG_COLOR = { Keynote: TOKENS.terracotta, Panel: TOKENS.indigo, Breakout: TOKENS.green, Workshop: TOKENS.gold, Networking: "#8a7a68", Opening: TOKENS.navy, Closing: TOKENS.navy, Break: "#b3a896", Sponsor: "#E8B23A" };
 
 const Agenda = () => (
   <section id="agenda" style={{ background: TOKENS.cream, padding: "120px 56px", borderTop: `1px solid ${TOKENS.line}` }}>

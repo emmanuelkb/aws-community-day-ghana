@@ -112,9 +112,12 @@ const Community = () => {
           <SectionEyebrow>Community</SectionEyebrow>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, marginTop: 24, alignItems: "center" }} className="org-grid">
             <div>
+              <div style={{ marginBottom: 28 }}>
+                <img src="assets/aws-ug-accra.png" alt="AWS User Group Accra" style={{ width: 160, height: 160, objectFit: "contain", display: "block" }} />
+              </div>
               <SectionHeadline size="large">Organised by AWS User Group Accra</SectionHeadline>
               <p style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2, marginTop: 28, maxWidth: 520 }}>
-                This event is run entirely by volunteers from Ghana's cloud community. We partner with user groups, universities, and developer communities across the country.
+                This event is run entirely by volunteers from Ghana's cloud community. We partner with user groups, universities, and developer communities across the community.
               </p>
               <a href={`mailto:${CONTACT}`} style={{ ...btnPrimary(), marginTop: 28 }}>Partner with us</a>
             </div>

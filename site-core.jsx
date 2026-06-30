@@ -380,6 +380,10 @@ const Footer = () => (
           <p style={{ fontSize: 13, lineHeight: 1.6, marginTop: 20, maxWidth: 360 }}>
             A community-led conference for cloud builders in Ghana, organised by AWS User Group Accra. Independent, free, and run by volunteers.
           </p>
+          <div style={{ marginTop: 20, display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", fontWeight: 600 }}>Organised by</div>
+            <img src="assets/aws-ug-accra.png" alt="AWS User Group Accra" style={{ width: 48, height: 48, objectFit: "contain", display: "block", opacity: 0.9 }} />
+          </div>
           <div style={{ marginTop: 20, fontSize: 13 }}>
             <a href={`mailto:${CONTACT}`} style={{ color: TOKENS.starGold, textDecoration: "none", fontWeight: 600 }}>{CONTACT}</a>
           </div>

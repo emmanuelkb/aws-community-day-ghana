@@ -121,7 +121,10 @@ const Hero = ({ heroVariant, onNotify }) => {
         <div style={{ marginTop: 28, fontSize: 13, letterSpacing: "0.16em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, textAlign: "center" }}>
           Saturday 29 August 2026 &nbsp;·&nbsp; Accra, Ghana &nbsp;·&nbsp; Main Auditorium
         </div>
-        <p style={{ marginTop: 18, fontSize: 18, color: "rgba(255,255,255,0.78)", maxWidth: 620, textAlign: "center", lineHeight: 1.5 }}>
+        <p style={{ marginTop: 22, fontSize: 19, color: "rgba(255,255,255,0.92)", maxWidth: 640, textAlign: "center", lineHeight: 1.45, fontWeight: 500 }}>
+          Building the Backbone: Powering Ghana's Digital Ambitions Through Cloud Technology
+        </p>
+        <p style={{ marginTop: 10, fontSize: 14, color: "rgba(255,255,255,0.55)", textAlign: "center", letterSpacing: "0.04em" }}>
           By the community, for the community.
         </p>
 
@@ -155,7 +158,7 @@ const Hero = ({ heroVariant, onNotify }) => {
 const HeroMarquee = () => (
   <Marquee items={[
     "Keynotes", "Hands-on Workshops", "Generative AI", "Serverless", "Bedrock", "SageMaker",
-    "Lambda", "Networking", "AWS Heroes", "Community Builders", "FinTech", "EdTech", "AgriTech",
+    "Lambda", "Networking", "AWS Heroes", "Community Builders", "Panels", "Town Hall", "Breakouts",
   ]} />
 );
 
@@ -168,8 +171,14 @@ const About = () => (
         <SectionHeadline size="large">What is Community Day?</SectionHeadline>
         <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, marginTop: 56, alignItems: "start" }}>
           <div style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2 }}>
+            <div style={{ marginBottom: 20, paddingBottom: 20, borderBottom: `1px solid ${TOKENS.line}` }}>
+              <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, color: TOKENS.terracotta, marginBottom: 8, fontFamily: "'Inter', sans-serif" }}>Theme</div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: TOKENS.ink, lineHeight: 1.35, fontFamily: "'Inter', sans-serif" }}>
+                Building the Backbone: Powering Ghana's Digital Ambitions Through Cloud Technology
+              </div>
+            </div>
             <p style={{ marginTop: 0 }}>
-              AWS Community Day Ghana 2026 is a one-day technology conference run by the <strong>AWS User Group Accra</strong>. Cloud practitioners, developers, students, founders, and industry leaders come together to learn, swap notes, and explore how AWS is being used to solve African problems.
+              AWS Community Day Ghana 2026 is a one-day technology conference run by the <strong>AWS User Group Accra</strong>. Cloud practitioners, developers, students, founders, and industry leaders come together to learn, swap notes, and explore how AWS is being used to build and scale real products.
             </p>
             <p>
               The day includes keynotes, panels, hands-on workshops, and breakout sessions from AWS Heroes, Community Builders, and local practitioners. Free to attend, open to everyone, and hosted in Accra.
@@ -181,10 +190,10 @@ const About = () => (
             </div>
             <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 0", display: "flex", flexDirection: "column", gap: 14 }}>
               {[
-                "2 keynotes — the state of cloud in Africa",
-                "Panels on Generative AI & cloud careers",
-                "3 parallel tracks + a hands-on workshop track",
-                "Sessions across FinTech, EdTech & AgriTech",
+                "Keynote: Building the Backbone",
+                "Panels on cloud and careers",
+                "3 parallel breakout tracks",
+                "Town Hall: Cloud Careers & Community Building",
                 "Networking reception to close the day",
               ].map(item => (
                 <li key={item} style={{ display: "flex", gap: 14, alignItems: "start", fontSize: 15, lineHeight: 1.5, color: "rgba(255,255,255,0.88)" }}>
@@ -205,7 +214,7 @@ const WhatToExpect = () => {
   const cards = [
     ["01", "Technical Sessions", "Deep-dive talks on AWS services, architectures, and real production patterns — from people who ship them."],
     ["02", "Hands-on Workshops", "A workshop track where you build on real AWS workloads, not just watch a screen."],
-    ["03", "Networking", "Meet builders, founders, AWS Heroes, and the West African cloud community over jollof and coffee."],
+    ["03", "Networking", "Meet builders, founders, AWS Heroes, and the cloud community over jollof and coffee."],
     ["04", "100% Free", "Community-led and free, funded by our sponsors. Open to everyone, from students to Heroes."],
   ];
   const accents = [TOKENS.terracotta, TOKENS.starGold, TOKENS.green, "#7BA4E8"];
@@ -236,8 +245,8 @@ const WhatToExpect = () => {
 /* ───────────────────── Tracks / Format ───────────────────── */
 const Tracks = () => {
   const tracks = [
-    { num: "01", name: "Keynotes & Panels", color: TOKENS.terracotta, desc: "Two keynotes on the state of cloud in Africa, plus panels on Generative AI and cloud careers.", chips: ["State of Cloud", "GenAI panel", "Careers"] },
-    { num: "02", name: "Parallel Tracks", color: "#7BA4E8", desc: "Three concurrent breakout tracks of practitioner talks — themes span FinTech, EdTech, and AgriTech.", chips: ["Track A", "Track B", "Track C"] },
+    { num: "01", name: "Keynotes & Panels", color: TOKENS.terracotta, desc: "Keynote, panels on cloud topics, and a town hall on cloud careers and community building.", chips: ["Keynote", "Panels", "Town Hall"] },
+    { num: "02", name: "Parallel Tracks", color: "#7BA4E8", desc: "Three concurrent breakout tracks of practitioner talks from engineers and builders.", chips: ["Track 1", "Track 2", "Track 3"] },
     { num: "03", name: "Workshop Track", color: TOKENS.starGold, desc: "Hands-on labs where you build on real AWS workloads with guidance from experienced engineers.", chips: ["Hands-on", "Labs", "Build"] },
   ];
   return (

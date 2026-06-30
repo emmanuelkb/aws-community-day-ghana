@@ -6,7 +6,7 @@ const { btnPrimaryNavy, btnGhostNavy, CFP_URL } = window;
 
 const WE_WANT = [
   "Practical talks grounded in real production experience. Show your work.",
-  "African use cases across FinTech, EdTech, AgriTech, and Generative AI.",
+  "Real-world use cases across FinTech, EdTech, AgriTech, Generative AI, and beyond.",
   "Honest lessons, including the 'Cloud Horror Stories' lightning thread on what went wrong and why.",
   "First-time speakers. We will help you shape your talk.",
 ];

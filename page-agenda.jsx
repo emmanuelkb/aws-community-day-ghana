@@ -3,20 +3,22 @@
 const { TOKENS, PageHeader, Reveal, Adinkra, btnPrimaryNavy } = window;
 
 const FULL_AGENDA = [
-  { time:"08:00–09:00", title:"Arrival, registration & breakfast snacks", tag:"Networking" },
-  { time:"09:00–09:30", title:"Opening remarks & welcome", tag:"Opening", sub:"MC + AWS User Group Accra Lead" },
-  { time:"09:30–10:15", title:"Opening Keynote — The State of Cloud in Africa", tag:"Keynote", sub:"AWS Hero / Senior Developer Advocate / AWS Sub-Saharan Africa team" },
-  { time:"10:15–11:00", title:"Keynote 2 — Building for Scale on AWS", tag:"Keynote", sub:"Senior technology leader from a Ghanaian or pan-African company" },
-  { time:"11:00–11:15", title:"Coffee break", tag:"Break" },
-  { time:"11:15–12:15", title:"Panel — African Builders on Generative AI", tag:"Panel", sub:"4 panelists + moderator: GenAI founder, enterprise ML lead, academic researcher, regulated-industry PM" },
-  { time:"12:15–13:15", title:"Lunch & networking", tag:"Networking", sub:"Jollof · Waakye · Fried yam" },
-  { time:"13:15–14:00", title:"Breakout Session 1 (45 min)", tag:"Breakout", tracks:["FinTech on AWS — Hubtel","EdTech on AWS — ITC","AgriTech on AWS"] },
-  { time:"14:00–14:45", title:"Breakout Session 2 (40 min)", tag:"Breakout", tracks:["FinTech on AWS","EdTech on AWS","AgriTech on AWS"] },
-  { time:"14:45–15:30", title:"Breakout Session 3 (40 min) — community talks", tag:"Breakout", sub:"Speakers selected from the open call", tracks:["Track 1","Track 2","Track 3"] },
-  { time:"15:30–15:45", title:"Tea break", tag:"Break" },
-  { time:"15:45–16:30", title:"Fireside — Cloud Careers & Community Building", tag:"Panel", sub:"4 panelists + moderator: career-switcher, recruiter/talent lead, recent grad in cloud, community organiser" },
-  { time:"16:30–17:00", title:"Closing ceremony, raffle & group photo", tag:"Closing" },
-  { time:"17:00 →", title:"Networking reception", tag:"Networking" },
+  { time:"08:00 – 09:00", title:"Arrival & registration", tag:"Networking" },
+  { time:"09:00 – 09:30", title:"Opening remarks & welcome", tag:"Opening", sub:"MC + AWS User Group Accra Lead" },
+  { time:"09:30 – 10:00", title:"Keynote: Building the Backbone", tag:"Keynote" },
+  { time:"10:10 – 10:20", title:"Message from 1st Platinum Sponsor", tag:"Sponsor" },
+  { time:"10:20 – 10:35", title:"Coffee break", tag:"Break" },
+  { time:"10:40 – 10:50", title:"Message from 2nd Platinum Sponsor", tag:"Sponsor" },
+  { time:"11:15 – 12:00", title:"Panel: Building the Backbone", tag:"Panel", sub:"4 speakers + moderator" },
+  { time:"12:00 – 12:10", title:"Picture with panelists (all participants)", tag:"Networking" },
+  { time:"12:15 – 12:45", title:"Lunch & networking", tag:"Networking", sub:"Jollof · Waakye · Fried yam" },
+  { time:"12:50 – 13:00", title:"Message from 3rd Platinum Sponsor", tag:"Sponsor" },
+  { time:"13:00 – 14:00", title:"Breakout Session 1 (3 tracks, 1 hour)", tag:"Breakout", tracks:["Track 1","Track 2","Track 3"] },
+  { time:"14:00 – 14:20", title:"Coffee break", tag:"Break" },
+  { time:"14:20 – 15:20", title:"Breakout Session 2 (3 tracks, 1 hour)", tag:"Breakout", tracks:["Track 1","Track 2","Track 3"] },
+  { time:"15:30 – 16:30", title:"Town Hall: Cloud Careers & Community Building", tag:"Panel", sub:"4 speakers + moderator, audience Q&A" },
+  { time:"16:30 – 17:00", title:"Closing ceremony, raffle & group photo", tag:"Closing" },
+  { time:"17:00 onwards", title:"Networking reception", tag:"Networking" },
 ];
 
 const TAG_COLOR = {
@@ -27,14 +29,15 @@ const TAG_COLOR = {
   Opening: TOKENS.navy,
   Closing: TOKENS.navy,
   Break: "#b3a896",
+  Sponsor: "#E8B23A",
 };
 
-/* Track chip colours per brief: FinTech = terracotta, EdTech = indigo, AgriTech = green */
+/* Track chip colours for the three parallel tracks */
 function trackColor(t) {
   const tl = t.toLowerCase();
-  if (tl.includes("fintech")) return TOKENS.terracotta;
-  if (tl.includes("edtech")) return TOKENS.indigo;
-  if (tl.includes("agritech")) return TOKENS.green;
+  if (tl.includes("track 1")) return TOKENS.terracotta;
+  if (tl.includes("track 2")) return TOKENS.indigo;
+  if (tl.includes("track 3")) return TOKENS.green;
   return "#8a7a68";
 }
 
@@ -89,9 +92,9 @@ const AgendaPage = () => (
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: TOKENS.ink2, marginRight: 6 }}>Track legend</span>
             {[
-              { label: "FinTech on AWS", color: TOKENS.terracotta },
-              { label: "EdTech on AWS", color: TOKENS.indigo },
-              { label: "AgriTech on AWS", color: TOKENS.green },
+              { label: "Track 1", color: TOKENS.terracotta },
+              { label: "Track 2", color: TOKENS.indigo },
+              { label: "Track 3", color: TOKENS.green },
             ].map(({ label, color }) => (
               <span key={label} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 11, padding: "5px 12px", borderRadius: 4, background: color, color: "#fff", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 {label}
