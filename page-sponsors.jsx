@@ -71,7 +71,7 @@ const IN_KIND = [
   "Catering or beverage supply",
   "Swag production (T-shirts, lanyards, notebooks)",
   "Photography & videography services",
-  "Cloud credits or technical workshop sponsorship",
+  "Cloud credits or technical session sponsorship",
   "Ride-share vouchers for speakers & volunteers",
 ];
 

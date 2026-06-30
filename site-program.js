@@ -395,7 +395,7 @@ const CFP = () => /*#__PURE__*/React.createElement("section", {
     fontWeight: 700,
     marginBottom: 8
   }
-}, "Formats"), [["Keynote", "45 min", "High-level, inspiring, big-picture"], ["Breakout talk", "40 min", "Deep dive into a topic or architecture"], ["Panel", "60 min", "Submit your perspective; we curate"], ["Workshop", "varies", "Hands-on, build-along session"]].map(([f, d, desc]) => /*#__PURE__*/React.createElement("div", {
+}, "Formats"), [["Keynote", "45 min", "High-level, inspiring, big-picture"], ["Breakout talk", "40 min", "Deep dive into a topic or architecture"], ["Panel", "60 min", "Submit your perspective; we curate"]].map(([f, d, desc]) => /*#__PURE__*/React.createElement("div", {
   key: f,
   className: "format-row",
   style: {

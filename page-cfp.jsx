@@ -21,7 +21,6 @@ const FORMATS = [
   ["Keynote", "45 min", "High-level, inspiring, big-picture"],
   ["Breakout talk", "40 min", "Deep dive into a topic or architecture"],
   ["Panel", "60 min", "Submit your perspective; we curate"],
-  ["Workshop", "varies", "Hands-on, build-along session"],
 ];
 
 const CFPPage = () => (

@@ -39,7 +39,7 @@ const TIERS = [{
   target: "Hubs, schools, communities",
   benefits: ["Logo on website", "2 tickets", "Group thank-you on social", "Open to non-profits, communities & bootcamps"]
 }];
-const IN_KIND = ["Catering or beverage supply", "Swag production (T-shirts, lanyards, notebooks)", "Photography & videography services", "Cloud credits or technical workshop sponsorship", "Ride-share vouchers for speakers & volunteers"];
+const IN_KIND = ["Catering or beverage supply", "Swag production (T-shirts, lanyards, notebooks)", "Photography & videography services", "Cloud credits or technical session sponsorship", "Ride-share vouchers for speakers & volunteers"];
 
 /* ── Why-sponsor stat band (navy, matching Hero stat-band pattern) ── */
 const WhySponsorBand = () => {

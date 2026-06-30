@@ -153,7 +153,6 @@ const CFP = () => (
               ["Keynote", "45 min", "High-level, inspiring, big-picture"],
               ["Breakout talk", "40 min", "Deep dive into a topic or architecture"],
               ["Panel", "60 min", "Submit your perspective; we curate"],
-              ["Workshop", "varies", "Hands-on, build-along session"],
             ].map(([f, d, desc]) => (
               <div key={f} className="format-row" style={{ padding: "20px 0", borderTop: "1px solid rgba(255,255,255,0.14)", display: "grid", gridTemplateColumns: "150px 70px 1fr", gap: 16, alignItems: "start" }}>
                 <div style={{ fontSize: 16, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.02em" }}>{f}</div>

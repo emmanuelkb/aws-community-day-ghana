@@ -17,7 +17,7 @@ const {
 } = window;
 const WE_WANT = ["Practical talks grounded in real production experience. Show your work.", "Real-world use cases across FinTech, EdTech, AgriTech, Generative AI, and beyond.", "Honest lessons, including the 'Cloud Horror Stories' lightning thread on what went wrong and why.", "First-time speakers. We will help you shape your talk."];
 const HOW = [["Submit", "Send your title, abstract, and a short bio via the speaker form."], ["Review", "The programme team reads every submission and matches it against tracks and formats."], ["Confirm", "Selected speakers are confirmed and briefed before the day."]];
-const FORMATS = [["Keynote", "45 min", "High-level, inspiring, big-picture"], ["Breakout talk", "40 min", "Deep dive into a topic or architecture"], ["Panel", "60 min", "Submit your perspective; we curate"], ["Workshop", "varies", "Hands-on, build-along session"]];
+const FORMATS = [["Keynote", "45 min", "High-level, inspiring, big-picture"], ["Breakout talk", "40 min", "Deep dive into a topic or architecture"], ["Panel", "60 min", "Submit your perspective; we curate"]];
 const CFPPage = () => /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(PageHeader, {
   glyph: "sankofa",
   eyebrow: "Call for speakers",

@@ -157,7 +157,7 @@ const Hero = ({ heroVariant, onNotify }) => {
 /* Marquee strip rendered right after hero */
 const HeroMarquee = () => (
   <Marquee items={[
-    "Keynotes", "Hands-on Workshops", "Generative AI", "Serverless", "Bedrock", "SageMaker",
+    "Keynotes", "Breakout Tracks", "Generative AI", "Serverless", "Bedrock", "SageMaker",
     "Lambda", "Networking", "AWS Heroes", "Community Builders", "Panels", "Town Hall", "Breakouts",
   ]} />
 );
@@ -181,7 +181,7 @@ const About = () => (
               AWS Community Day Ghana 2026 is a one-day technology conference run by the <strong>AWS User Group Accra</strong>. Cloud practitioners, developers, students, founders, and industry leaders come together to learn, swap notes, and explore how AWS is being used to build and scale real products.
             </p>
             <p>
-              The day includes keynotes, panels, hands-on workshops, and breakout sessions from AWS Heroes, Community Builders, and local practitioners. Free to attend, open to everyone, and hosted in Accra.
+              The day includes keynotes, panels, breakout tracks, and a closing town hall from AWS Heroes, Community Builders, and local practitioners. Free to attend, open to everyone, and hosted in Accra.
             </p>
           </div>
           <div style={{ background: TOKENS.navy, color: "#fff", padding: "36px", borderRadius: 16 }}>
@@ -213,7 +213,7 @@ const About = () => (
 const WhatToExpect = () => {
   const cards = [
     ["01", "Technical Sessions", "Deep-dive talks on AWS services, architectures, and real production patterns — from people who ship them."],
-    ["02", "Hands-on Workshops", "A workshop track where you build on real AWS workloads, not just watch a screen."],
+    ["02", "Panels & Town Hall", "Keynote and panels on the main stage, plus a closing town hall on cloud careers and community building."],
     ["03", "Networking", "Meet builders, founders, AWS Heroes, and the cloud community over jollof and coffee."],
     ["04", "100% Free", "Community-led and free, funded by our sponsors. Open to everyone, from students to Heroes."],
   ];
@@ -246,8 +246,8 @@ const WhatToExpect = () => {
 const Tracks = () => {
   const tracks = [
     { num: "01", name: "Keynotes & Panels", color: TOKENS.terracotta, desc: "Keynote, panels on cloud topics, and a town hall on cloud careers and community building.", chips: ["Keynote", "Panels", "Town Hall"] },
-    { num: "02", name: "Parallel Tracks", color: "#7BA4E8", desc: "Three concurrent breakout tracks of practitioner talks from engineers and builders.", chips: ["Track 1", "Track 2", "Track 3"] },
-    { num: "03", name: "Workshop Track", color: TOKENS.starGold, desc: "Hands-on labs where you build on real AWS workloads with guidance from experienced engineers.", chips: ["Hands-on", "Labs", "Build"] },
+    { num: "02", name: "Parallel Tracks", color: "#7BA4E8", desc: "Three parallel breakout tracks across two sessions, with practitioner talks from engineers and builders.", chips: ["Track 1", "Track 2", "Track 3"] },
+    { num: "03", name: "Town Hall & Networking", color: TOKENS.starGold, desc: "A closing town hall on cloud careers and community building, then a networking reception to round off the day.", chips: ["Town Hall", "Careers", "Networking"] },
   ];
   return (
     <section id="tracks" style={{ background: TOKENS.navy, color: "#fff", padding: "120px 56px", position: "relative", overflow: "hidden" }}>
