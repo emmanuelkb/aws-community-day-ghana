@@ -32,89 +32,29 @@ const WhyAttend = () => {
   );
 };
 
-/* ───────────────────── Speakers ─────────────────────
-   Featured keynotes (TBA) + grid mixing confirmed + TBA. */
-const SPEAKERS = [
-  { name: "Speaker TBA", role: "Cloud practitioner", topic: "To be announced", track: "Keynote", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Panel speaker", topic: "Building the Backbone", track: "Panel", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Panel speaker", topic: "Building the Backbone", track: "Panel", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "GenAI practitioner", topic: "To be announced", track: "GenAI", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Cloud engineer", topic: "To be announced", track: "Cloud", initials: "—", confirmed: false },
-  { name: "Speaker TBA", role: "Community Builder", topic: "Cloud careers & community", track: "Careers", initials: "—", confirmed: false },
-];
-const TRACK_TINT = { FinTech: TOKENS.terracotta, EdTech: "#3B6BB8", AgriTech: TOKENS.green, GenAI: TOKENS.gold, Careers: TOKENS.indigo, Keynote: TOKENS.terracotta, Panel: TOKENS.indigo, Cloud: TOKENS.green };
-
-const KeynoteCard = ({ title, sub }) => (
-  <div style={{
-    background: TOKENS.navy, color: "#fff", borderRadius: 16, padding: "40px 36px",
-    position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", gap: 16, minHeight: 240,
-  }}>
-    <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700 }}>Keynote</div>
-    <div style={{ display: "flex", gap: 20, alignItems: "center", marginTop: 8 }}>
-      <div style={{ width: 72, height: 72, borderRadius: 12, background: "rgba(255,255,255,0.08)", border: "1px dashed rgba(255,255,255,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: 24, color: "rgba(255,255,255,0.5)" }}>?</div>
-      <div>
-        <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 26, fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.01em", lineHeight: 1.05 }}>To be announced</div>
-        <div style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", marginTop: 8 }}>{title}</div>
-      </div>
-    </div>
-    <p style={{ fontSize: 14, lineHeight: 1.55, color: "rgba(255,255,255,0.6)", margin: "auto 0 0" }}>{sub}</p>
-  </div>
-);
-
-const SpeakerCard = ({ s }) => {
-  const c = TRACK_TINT[s.track] || TOKENS.terracotta;
-  return (
-    <div style={{ background: "#fff", border: `1px solid rgba(26,20,16,0.12)`, borderRadius: 14, overflow: "hidden", color: "#1a1410" }}>
-      <div style={{ padding: 24, display: "flex", gap: 18, alignItems: "start" }}>
-        <div style={{
-          width: 56, height: 56, borderRadius: 10, flexShrink: 0,
-          background: s.confirmed ? TOKENS.navy : "rgba(26,20,16,0.05)",
-          color: s.confirmed ? "#fff" : "#3a2f28",
-          border: s.confirmed ? "none" : "1px dashed rgba(26,20,16,0.25)",
-          display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 16,
-        }}>{s.initials}</div>
-        <div style={{ flex: 1 }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", gap: 10 }}>
-            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, fontWeight: 800, color: "#1a1410", textTransform: "uppercase", letterSpacing: "-0.005em", lineHeight: 1.1 }}>{s.name}</div>
-            <span style={{ fontSize: 9, padding: "4px 9px", borderRadius: 3, background: c, color: "#fff", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", flexShrink: 0 }}>{s.track}</span>
-          </div>
-          <div style={{ fontSize: 13, color: "#3a2f28", marginTop: 4 }}>{s.role}</div>
-          <div style={{ fontSize: 14, color: "#1a1410", marginTop: 12, fontWeight: 500, lineHeight: 1.4 }}>"{s.topic}"</div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
+/* ───────────────────── Speakers (compact landing band) ─────────────────────
+   No TBA cards on the landing. The full line-up lives on speakers.html. */
 const Speakers = () => (
-  <section id="speakers" style={{ background: TOKENS.paper, padding: "120px 56px" }}>
+  <section id="speakers" style={{ background: TOKENS.paper, padding: "96px 56px" }}>
     <Reveal>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", flexWrap: "wrap", gap: 32 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Adinkra name="gyenyame" size={18} color={TOKENS.terracotta} />
+          <SectionEyebrow>Speakers</SectionEyebrow>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, marginTop: 20, alignItems: "center" }} className="speakers-band-grid">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <Adinkra name="gyenyame" size={18} color={TOKENS.terracotta} />
-              <SectionEyebrow>Speakers</SectionEyebrow>
-            </div>
             <SectionHeadline size="large">Speakers &amp; keynotes</SectionHeadline>
           </div>
-          <div style={{ fontSize: 14, color: TOKENS.ink2, maxWidth: 340, lineHeight: 1.55 }}>
-            Keynotes and a first wave of speakers are being confirmed. The call for speakers is open — add your name to the line-up.
+          <div>
+            <p style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2, margin: "0 0 32px" }}>
+              Keynotes and speakers are being confirmed now. The call for speakers is open, so the line-up is yours to join.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a href="cfp.html" style={btnPrimary()}>Submit a talk</a>
+              <a href="speakers.html" style={btnGhost()}>See speaker roles</a>
+            </div>
           </div>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 56 }} className="keynote-grid">
-          <KeynoteCard title="Keynote: Building the Backbone" sub="An AWS Hero, Senior Developer Advocate, or AWS representative." />
-          <KeynoteCard title="Panel: Building the Backbone" sub="A senior technology leader joining the panel discussion." />
-        </div>
-
-        <div className="speakers-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 16 }}>
-          {SPEAKERS.map((s, i) => <SpeakerCard key={i} s={s} />)}
-        </div>
-
-        <div style={{ marginTop: 24, display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-          <a href="cfp.html" style={btnPrimary()}>Submit a talk</a>
-          <span style={{ fontSize: 13, color: TOKENS.ink2 }}>Full line-up announced closer to the event.</span>
         </div>
       </div>
     </Reveal>

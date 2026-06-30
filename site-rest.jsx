@@ -5,45 +5,45 @@ const { btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy } = window;
 
 const CONTACT = "awsaccrausergroup@gmail.com";
 
-/* ───────────────────── Sponsors (tiers, no prices) ───────────────────── */
-const SponsorTier = ({ tier, color, count, names }) => (
-  <div style={{ marginBottom: 48 }}>
-    <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 18 }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: TOKENS.ink, letterSpacing: "0.18em", textTransform: "uppercase" }}>{tier}</div>
-      <div style={{ width: 28, height: 3, background: color }} />
-      <div style={{ flex: 1, height: 1, background: TOKENS.line }} />
-    </div>
-    <div style={{ display: "grid", gridTemplateColumns: `repeat(${count}, 1fr)`, gap: 12 }} className="sponsor-row">
-      {names.map((n, i) => (
-        <div key={i} style={{
-          height: 104, border: `1px dashed ${color}`, borderRadius: 12,
-          display: "flex", alignItems: "center", justifyContent: "center", background: "#fff",
-          fontSize: 11, color: TOKENS.ink2, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase",
-        }}>{n}</div>
-      ))}
-    </div>
-  </div>
-);
+/* ───────────────────── Sponsors (compact landing band) ───────────────────── */
+const SPONSOR_TIERS = [
+  { name: "Platinum", color: TOKENS.terracotta },
+  { name: "Gold",     color: TOKENS.gold },
+  { name: "Silver",   color: TOKENS.indigo },
+  { name: "Bronze",   color: TOKENS.green },
+  { name: "Community Partner", color: TOKENS.ink2 },
+];
 
 const Sponsors = () => (
-  <section id="sponsors" style={{ background: TOKENS.cream, padding: "120px 0", borderTop: `1px solid ${TOKENS.line}` }}>
+  <section id="sponsors" style={{ background: TOKENS.cream, padding: "96px 0", borderTop: `1px solid ${TOKENS.line}` }}>
     <Reveal>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 56px" }}>
         <SectionEyebrow>Sponsors</SectionEyebrow>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", flexWrap: "wrap", gap: 32, marginBottom: 24 }}>
-          <SectionHeadline size="large">Power the community</SectionHeadline>
-          <a href="sponsors.html" style={{ ...btnGhost(), padding: "14px 22px" }}>Get the prospectus →</a>
-        </div>
-        <p style={{ fontSize: 16, lineHeight: 1.6, color: TOKENS.ink2, maxWidth: 640, marginBottom: 48 }}>
-          AWS Community Day Ghana is free to attend, funded by sponsors. Five tiers are available, from headline Platinum to Community Partner. Your brand in front of 300+ builders, founders, and students in Ghana's cloud community.
-        </p>
-        <SponsorTier tier="Platinum" color={TOKENS.terracotta} count={1} names={["YOUR LOGO HERE"]} />
-        <SponsorTier tier="Gold" color={TOKENS.gold} count={2} names={["LOGO", "LOGO"]} />
-        <SponsorTier tier="Silver" color={TOKENS.indigo} count={3} names={["logo", "logo", "logo"]} />
-        <SponsorTier tier="Bronze" color={TOKENS.green} count={4} names={["logo", "logo", "logo", "logo"]} />
-        <SponsorTier tier="Community Partner" color={TOKENS.ink} count={5} names={Array(5).fill("·")} />
-        <div style={{ marginTop: 8, fontSize: 14, color: TOKENS.ink2 }}>
-          Interested? Email <a href={`mailto:${CONTACT}`} style={{ color: TOKENS.terracotta, fontWeight: 600 }}>{CONTACT}</a> for the sponsorship prospectus.
+        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, marginTop: 20, alignItems: "center" }} className="sponsors-band-grid">
+          <div>
+            <SectionHeadline size="large">Power the community</SectionHeadline>
+          </div>
+          <div>
+            <p style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2, margin: "0 0 28px" }}>
+              AWS Community Day Ghana is free to attend, funded by sponsors. Five tiers are available, from headline Platinum to Community Partner. Your brand in front of 300+ builders, founders, and students in Ghana's cloud community.
+            </p>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 32 }}>
+              {SPONSOR_TIERS.map(({ name, color }) => (
+                <span key={name} style={{
+                  fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase",
+                  padding: "7px 14px", borderRadius: 3,
+                  border: `1.5px solid ${color}`, color, background: "transparent",
+                  whiteSpace: "nowrap",
+                }}>{name}</span>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+              <a href="sponsors.html" style={btnPrimary()}>Become a sponsor</a>
+              <span style={{ fontSize: 14, color: TOKENS.ink2 }}>
+                or email <a href={`mailto:${CONTACT}`} style={{ color: TOKENS.terracotta, fontWeight: 600 }}>{CONTACT}</a>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </Reveal>
