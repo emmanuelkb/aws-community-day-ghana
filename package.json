@@ -1,0 +1,14 @@
+{
+  "name": "aws-community-day-ghana",
+  "private": true,
+  "description": "AWS Community Day Ghana 2026 — static site build tooling",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.29.7",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-react": "^7.29.7"
+  },
+  "note": "Edit .jsx source files, run `npm run build` to recompile to .js, then commit the .js files. GitHub Pages serves the static .js — no server-side build step."
+}

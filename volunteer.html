@@ -39,26 +39,10 @@
 </head>
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
-  <script type="text/babel" src="site-core.jsx"></script>
-  <script type="text/babel" src="page-volunteer.jsx"></script>
-  <script type="text/babel">
-    const { Nav, MobileMenu, Footer, NotifyModal } = window;
-    const { VolunteerPage } = window;
-    function App(){
-      const [mobileOpen,setMobileOpen]=React.useState(false);
-      const [notifyOpen,setNotifyOpen]=React.useState(false);
-      return (<div>
-        <Nav onRegister={()=>setNotifyOpen(true)} onMobileToggle={()=>setMobileOpen(!mobileOpen)} mobileOpen={mobileOpen} darkHero={true} active="volunteer.html" />
-        <MobileMenu open={mobileOpen} onClose={()=>setMobileOpen(false)} onRegister={()=>setNotifyOpen(true)} />
-        <VolunteerPage />
-        <Footer />
-        <NotifyModal open={notifyOpen} onClose={()=>setNotifyOpen(false)} />
-      </div>);
-    }
-    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
-  </script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="site-core.js"></script>
+  <script src="page-volunteer.js"></script>
+  <script src="boot-volunteer.js"></script>
 </body>
 </html>
