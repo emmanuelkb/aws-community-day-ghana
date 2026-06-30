@@ -217,6 +217,7 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active 
               borderBottom: isActive ? `2px solid ${TOKENS.awsOrange}` : "2px solid transparent",
               paddingBottom: 2,
             }}
+              {...(isActive ? { "aria-current": "page" } : {})}
               onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
               onMouseLeave={(e) => e.currentTarget.style.opacity = isActive ? 1 : 0.78}>
               {l}
@@ -394,14 +395,15 @@ const Footer = () => (
         </div>
         {[
           ["Event", [["About", "index.html#about"], ["Agenda", "agenda.html"], ["Speakers", "speakers.html"], ["Venue", "venue.html"]]],
-          ["Get involved", [["Register", "index.html#top"], ["Speak", "cfp.html"], ["Sponsor", "sponsors.html"], ["Volunteer", "volunteer.html"]]],
+          ["Get involved", [["Register", LUMA_URL], ["Speak", "cfp.html"], ["Sponsor", "sponsors.html"], ["Volunteer", "volunteer.html"]]],
           ["More", [["FAQ", "index.html#faq"], ["Community", "index.html#community"], ["Code of conduct", "code-of-conduct.html"], ["Contact", `mailto:${CONTACT}`]]],
         ].map(([t, links]) => (
           <div key={t}>
             <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginBottom: 16 }}>{t}</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {links.map(([l, h]) => (
-                <a key={l} href={h} style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontSize: 13 }}>{l}</a>
+                <a key={l} href={h} style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontSize: 13 }}
+                  {...(h.startsWith("http") ? { target: "_blank", rel: "noopener" } : {})}>{l}</a>
               ))}
             </div>
           </div>

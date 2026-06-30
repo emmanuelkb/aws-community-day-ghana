@@ -13,7 +13,8 @@ const {
 const {
   btnPrimaryNavy,
   btnGhostNavy,
-  CFP_URL
+  CFP_URL,
+  CONTACT
 } = window;
 const WE_WANT = ["Practical talks grounded in real production experience. Show your work.", "Real-world use cases across FinTech, EdTech, AgriTech, Generative AI, and beyond.", "Honest lessons, including the 'Cloud Horror Stories' lightning thread on what went wrong and why.", "First-time speakers. We will help you shape your talk."];
 const HOW = [["Submit", "Send your title, abstract, and a short bio via the speaker form."], ["Review", "The programme team reads every submission and matches it against tracks and formats."], ["Confirm", "Selected speakers are confirmed and briefed before the day."]];
@@ -281,7 +282,14 @@ const CFPPage = () => /*#__PURE__*/React.createElement("main", null, /*#__PURE__
     marginLeft: "auto",
     marginRight: "auto"
   }
-}, "Got something worth sharing? Whether it is your first talk or your fiftieth, send it in. The programme team reads every submission."), /*#__PURE__*/React.createElement("div", {
+}, "Got something worth sharing? Whether it is your first talk or your fiftieth, send it in. The programme team reads every submission."), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontSize: 14,
+    color: "rgba(255,255,255,0.55)",
+    marginBottom: 24,
+    marginTop: -24
+  }
+}, "Speaker submissions by email for now; the CFP form opens soon."), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
     gap: 16,
@@ -289,7 +297,7 @@ const CFPPage = () => /*#__PURE__*/React.createElement("main", null, /*#__PURE__
     flexWrap: "wrap"
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: CFP_URL,
+  href: `mailto:${CONTACT}?subject=Speaker submission - AWS Community Day Ghana 2026`,
   style: btnPrimaryNavy()
 }, "Submit a talk"), /*#__PURE__*/React.createElement("a", {
   href: "index.html#faq",

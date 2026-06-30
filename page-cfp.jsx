@@ -2,7 +2,7 @@
    Depends on site-core.jsx loading first (window exports). */
 
 const { TOKENS, PageHeader, Reveal, SectionEyebrow, SectionHeadline, Adinkra } = window;
-const { btnPrimaryNavy, btnGhostNavy, CFP_URL } = window;
+const { btnPrimaryNavy, btnGhostNavy, CFP_URL, CONTACT } = window;
 
 const WE_WANT = [
   "Practical talks grounded in real production experience. Show your work.",
@@ -144,8 +144,11 @@ const CFPPage = () => (
           <p style={{ fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.72)", margin: "0 0 48px", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
             Got something worth sharing? Whether it is your first talk or your fiftieth, send it in. The programme team reads every submission.
           </p>
+          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", marginBottom: 24, marginTop: -24 }}>
+            Speaker submissions by email for now; the CFP form opens soon.
+          </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={CFP_URL} style={btnPrimaryNavy()}>Submit a talk</a>
+            <a href={`mailto:${CONTACT}?subject=Speaker submission - AWS Community Day Ghana 2026`} style={btnPrimaryNavy()}>Submit a talk</a>
             <a href="index.html#faq" style={btnGhostNavy()}>Speaker FAQ</a>
           </div>
         </div>

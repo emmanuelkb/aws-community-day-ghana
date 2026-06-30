@@ -1,4 +1,5 @@
 (function(){
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* Site core — tokens, wordmark, kente accents, section heading, countdown, nav.
    Visual language: Bay Area / Toronto AWS Community Day pattern.
    - Inter sans throughout (no Fraunces serif headlines).
@@ -396,7 +397,7 @@ const Nav = ({
     }
   }, NAV_LINKS.map(([l, href]) => {
     const isActive = active && active === href;
-    return /*#__PURE__*/React.createElement("a", {
+    return /*#__PURE__*/React.createElement("a", _extends({
       key: href,
       href: href,
       style: {
@@ -405,10 +406,13 @@ const Nav = ({
         opacity: isActive ? 1 : 0.78,
         borderBottom: isActive ? `2px solid ${TOKENS.awsOrange}` : "2px solid transparent",
         paddingBottom: 2
-      },
+      }
+    }, isActive ? {
+      "aria-current": "page"
+    } : {}, {
       onMouseEnter: e => e.currentTarget.style.opacity = 1,
       onMouseLeave: e => e.currentTarget.style.opacity = isActive ? 1 : 0.78
-    }, l);
+    }), l);
   })), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
@@ -789,7 +793,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     fontSize: 11,
     opacity: 0.5
   }
-}, "\"AWS\" and the AWS logo are trademarks of Amazon.com, Inc. This community event is organised by AWS User Group Accra.")), [["Event", [["About", "index.html#about"], ["Agenda", "agenda.html"], ["Speakers", "speakers.html"], ["Venue", "venue.html"]]], ["Get involved", [["Register", "index.html#top"], ["Speak", "cfp.html"], ["Sponsor", "sponsors.html"], ["Volunteer", "volunteer.html"]]], ["More", [["FAQ", "index.html#faq"], ["Community", "index.html#community"], ["Code of conduct", "code-of-conduct.html"], ["Contact", `mailto:${CONTACT}`]]]].map(([t, links]) => /*#__PURE__*/React.createElement("div", {
+}, "\"AWS\" and the AWS logo are trademarks of Amazon.com, Inc. This community event is organised by AWS User Group Accra.")), [["Event", [["About", "index.html#about"], ["Agenda", "agenda.html"], ["Speakers", "speakers.html"], ["Venue", "venue.html"]]], ["Get involved", [["Register", LUMA_URL], ["Speak", "cfp.html"], ["Sponsor", "sponsors.html"], ["Volunteer", "volunteer.html"]]], ["More", [["FAQ", "index.html#faq"], ["Community", "index.html#community"], ["Code of conduct", "code-of-conduct.html"], ["Contact", `mailto:${CONTACT}`]]]].map(([t, links]) => /*#__PURE__*/React.createElement("div", {
   key: t
 }, /*#__PURE__*/React.createElement("div", {
   style: {
@@ -806,7 +810,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     flexDirection: "column",
     gap: 12
   }
-}, links.map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+}, links.map(([l, h]) => /*#__PURE__*/React.createElement("a", _extends({
   key: l,
   href: h,
   style: {
@@ -814,7 +818,10 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     textDecoration: "none",
     fontSize: 13
   }
-}, l)))))), /*#__PURE__*/React.createElement("div", {
+}, h.startsWith("http") ? {
+  target: "_blank",
+  rel: "noopener"
+} : {}), l)))))), /*#__PURE__*/React.createElement("div", {
   id: "coc",
   style: {
     paddingTop: 32,

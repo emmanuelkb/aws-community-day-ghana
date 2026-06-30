@@ -270,7 +270,16 @@ const Hero = ({
       maxWidth: 1100,
       margin: "0 auto"
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h1", {
+    style: {
+      position: "absolute",
+      width: 1,
+      height: 1,
+      overflow: "hidden",
+      clip: "rect(0 0 0 0)",
+      whiteSpace: "nowrap"
+    }
+  }, "AWS Community Day Ghana 2026 \u2014 Accra, 29 August 2026"), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "inline-flex",
       alignItems: "center",
@@ -447,7 +456,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
     lineHeight: 1.45,
     fontFamily: "'Inter', sans-serif"
   }
-}, "Building the Backbone: powering Ghana's digital ambitions through cloud.")), /*#__PURE__*/React.createElement("p", {
+}, "Building the Backbone: Powering Ghana's Digital Ambitions Through Cloud Technology")), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 0
   }

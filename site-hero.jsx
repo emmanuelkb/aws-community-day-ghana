@@ -104,6 +104,7 @@ const Hero = ({ heroVariant, onNotify }) => {
         background: `linear-gradient(90deg, ${TOKENS.terracotta} 0 33%, ${TOKENS.starGold} 33% 66%, ${TOKENS.green} 66% 100%)` }}/>
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "40px 56px", position: "relative", zIndex: 2, width: "100%", maxWidth: 1100, margin: "0 auto" }}>
+        <h1 style={{position:"absolute",width:1,height:1,overflow:"hidden",clip:"rect(0 0 0 0)",whiteSpace:"nowrap"}}>AWS Community Day Ghana 2026 — Accra, 29 August 2026</h1>
         {/* Edition badge */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 10, padding: "7px 8px 7px 16px",
@@ -174,7 +175,7 @@ const About = () => (
             <div style={{ marginBottom: 20, paddingBottom: 20, borderBottom: `1px solid ${TOKENS.line}` }}>
               <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, color: TOKENS.terracotta, marginBottom: 8, fontFamily: "'Inter', sans-serif" }}>Theme</div>
               <div style={{ fontSize: 16, fontWeight: 600, color: TOKENS.ink2, lineHeight: 1.45, fontFamily: "'Inter', sans-serif" }}>
-                Building the Backbone: powering Ghana's digital ambitions through cloud.
+                Building the Backbone: Powering Ghana's Digital Ambitions Through Cloud Technology
               </div>
             </div>
             <p style={{ marginTop: 0 }}>

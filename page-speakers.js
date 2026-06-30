@@ -9,7 +9,8 @@ const {
   SectionEyebrow,
   SectionHeadline,
   btnPrimary,
-  CFP_URL
+  CFP_URL,
+  CONTACT
 } = window;
 
 /* ── Data arrays (verbatim from task-6-brief §6.2) ── */
@@ -500,8 +501,16 @@ const SpeakersPage = () => /*#__PURE__*/React.createElement("div", null, /*#__PU
     marginTop: 16,
     maxWidth: 520
   }
-}, "We want practical talks grounded in real experience, across FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers are welcome.")), /*#__PURE__*/React.createElement("a", {
-  href: CFP_URL,
+}, "We want practical talks grounded in real experience, across FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers are welcome."), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontSize: 13,
+    color: TOKENS.ink2,
+    lineHeight: 1.5,
+    marginTop: 8,
+    maxWidth: 520
+  }
+}, "Speaker submissions by email for now; the CFP form opens soon.")), /*#__PURE__*/React.createElement("a", {
+  href: `mailto:${CONTACT}?subject=Speaker submission - AWS Community Day Ghana 2026`,
   style: btnPrimary()
 }, "Submit a talk"))))));
 Object.assign(window, {

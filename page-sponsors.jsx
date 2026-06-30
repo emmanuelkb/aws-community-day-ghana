@@ -91,7 +91,7 @@ const WhySponsorBand = () => {
             <SectionEyebrow dark>Why sponsor?</SectionEyebrow>
             <SectionHeadline dark>Reach Ghana's cloud community</SectionHeadline>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", maxWidth: 620, marginTop: 18, lineHeight: 1.6 }}>
-              AWS Community Day Ghana 2026 is the first dedicated AWS community conference in West Africa. The audience is cloud practitioners, founders, and students who build for the region.
+              AWS Community Day Ghana 2026 is Ghana's first dedicated AWS community conference. The audience is cloud practitioners, founders, and students who build for the region.
             </p>
           </div>
         </Reveal>

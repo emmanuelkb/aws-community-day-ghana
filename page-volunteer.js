@@ -399,6 +399,8 @@ const VolunteerPage = () => /*#__PURE__*/React.createElement("div", null, /*#__P
   }
 }, "Applications are open now. Shortlisted volunteers are confirmed by 25 July 2026. We will send you everything you need ahead of the day.")), /*#__PURE__*/React.createElement("a", {
   href: VOLUNTEER_URL,
+  target: "_blank",
+  rel: "noopener",
   style: btnPrimary()
 }, "Apply to volunteer \u2192"))))));
 Object.assign(window, {

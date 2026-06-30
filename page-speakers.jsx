@@ -1,6 +1,6 @@
 /* page-speakers.jsx — Speakers & Roles page. PageHeader is defined in site-core.jsx. */
 
-const { TOKENS, PageHeader, Reveal, Adinkra, SectionEyebrow, SectionHeadline, btnPrimary, CFP_URL } = window;
+const { TOKENS, PageHeader, Reveal, Adinkra, SectionEyebrow, SectionHeadline, btnPrimary, CFP_URL, CONTACT } = window;
 
 /* ── Data arrays (verbatim from task-6-brief §6.2) ── */
 const KEYNOTE_ROLES = [
@@ -202,8 +202,11 @@ const SpeakersPage = () => (
               <p style={{ fontSize: 15, color: TOKENS.ink2, lineHeight: 1.6, marginTop: 16, maxWidth: 520 }}>
                 We want practical talks grounded in real experience, across FinTech, EdTech, AgriTech, GenAI, and beyond. First-time speakers are welcome.
               </p>
+              <p style={{ fontSize: 13, color: TOKENS.ink2, lineHeight: 1.5, marginTop: 8, maxWidth: 520 }}>
+                Speaker submissions by email for now; the CFP form opens soon.
+              </p>
             </div>
-            <a href={CFP_URL} style={btnPrimary()}>Submit a talk</a>
+            <a href={`mailto:${CONTACT}?subject=Speaker submission - AWS Community Day Ghana 2026`} style={btnPrimary()}>Submit a talk</a>
           </div>
         </div>
       </Reveal>

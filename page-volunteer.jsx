@@ -340,7 +340,7 @@ const VolunteerPage = () => (
                 We will send you everything you need ahead of the day.
               </p>
             </div>
-            <a href={VOLUNTEER_URL} style={btnPrimary()}>Apply to volunteer →</a>
+            <a href={VOLUNTEER_URL} target="_blank" rel="noopener" style={btnPrimary()}>Apply to volunteer →</a>
           </div>
         </div>
       </Reveal>

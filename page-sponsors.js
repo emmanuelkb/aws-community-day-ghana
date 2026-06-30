@@ -71,7 +71,7 @@ const WhySponsorBand = () => {
       marginTop: 18,
       lineHeight: 1.6
     }
-  }, "AWS Community Day Ghana 2026 is the first dedicated AWS community conference in West Africa. The audience is cloud practitioners, founders, and students who build for the region.")))), /*#__PURE__*/React.createElement("div", {
+  }, "AWS Community Day Ghana 2026 is Ghana's first dedicated AWS community conference. The audience is cloud practitioners, founders, and students who build for the region.")))), /*#__PURE__*/React.createElement("div", {
     className: "stat-band",
     style: {
       display: "grid",
