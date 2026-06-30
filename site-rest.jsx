@@ -161,7 +161,7 @@ const Crew = () => {
                 padding: "24px", background: "#fff", border: `1px solid ${TOKENS.line}`, borderRadius: 12,
                 display: "flex", flexDirection: "column", gap: 10,
               }}>
-                <div style={{ fontSize: 12, fontWeight: 800, color: [TOKENS.terracotta, TOKENS.gold, TOKENS.green, TOKENS.indigo][i % 4], letterSpacing: "0.08em" }}>0{i + 1}</div>
+                <div style={{ fontSize: 12, fontWeight: 800, color: [TOKENS.terracotta, TOKENS.indigo, TOKENS.green, TOKENS.indigo][i % 4], letterSpacing: "0.08em" }}>0{i + 1}</div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: TOKENS.ink, letterSpacing: "-0.005em" }}>{t}</div>
               </div>
             ))}
@@ -175,9 +175,9 @@ const Crew = () => {
 
 /* ───────────────────── FAQ ───────────────────── */
 const FAQ_ITEMS = [
-  ["Is the event free to attend?", "Yes. AWS Community Day Ghana 2026 is free and open to anyone interested in cloud, AI, and engineering. Capacity is 300, so register early once registration opens."],
+  ["Is the event free to attend?", "Yes. AWS Community Day Ghana 2026 is free and open to anyone interested in cloud, AI, and engineering. Capacity is 300, so register early to secure your spot."],
   ["When and where is it?", "Saturday 29 August 2026, 08:00–17:00, at the Main Auditorium in Accra, Ghana. The exact address is confirmed closer to the date."],
-  ["How do I register?", "Registration opens on Luma. Use 'Register on Luma' in the hero above, or 'Notify me' and we'll email you the moment tickets go live."],
+  ["How do I register?", "Registration is open on Luma. Use Register on Luma at the top of the page, or head straight to our Luma page."],
   ["Who is it for?", "Software engineers, cloud architects, DevOps and security practitioners, data and AI folks, founders, and students. Beginners and AWS Heroes alike."],
   ["Can I speak?", "Yes. The call for speakers is open. We want practical talks across FinTech, EdTech, AgriTech, GenAI, and more. First-time speakers are welcome."],
   ["How can my company sponsor?", `We have Platinum, Gold, Silver, Bronze, and Community Partner tiers. Email ${CONTACT} for the sponsorship prospectus.`],
@@ -231,11 +231,11 @@ const Newsletter = ({ onNotify }) => (
         Be the first to know
       </h2>
       <p style={{ fontSize: 18, lineHeight: 1.55, color: "rgba(255,255,255,0.78)", maxWidth: 560, margin: "32px auto 0" }}>
-        We'll email you when registration opens on Luma, and again as speakers and agenda details are confirmed.
+        Registration is open on Luma. Subscribe and we'll send speaker drops and agenda updates as they land.
       </p>
       <div style={{ marginTop: 36, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-        <button onClick={onNotify} style={btnPrimaryNavy()}>Notify me</button>
-        <a href="#" style={btnGhostNavy()}>Follow on LinkedIn</a>
+        <a href={window.LUMA_URL} target="_blank" rel="noopener" style={btnPrimaryNavy()}>Register on Luma</a>
+        <button onClick={onNotify} style={btnGhostNavy()}>Notify me</button>
       </div>
     </div>
   </section>

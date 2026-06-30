@@ -7,7 +7,7 @@ const { TOKENS, KenteStripes, KenteBar, SectionEyebrow, SectionHeadline, Akwaaba
 const { btnPrimary, btnGhost, btnPrimaryNavy, btnGhostNavy } = window;
 
 const EVENT_DATE = "2026-08-29T08:00:00+00:00";
-const LUMA_URL = "#"; /* TODO: replace with the real Luma event URL when available */
+const LUMA_URL = window.LUMA_URL; /* sourced from site-core.jsx */
 
 /* ───── Ghanaian black star ───── */
 const StarPath = (props) => (
@@ -113,7 +113,7 @@ const Hero = ({ heroVariant, onNotify }) => {
           <span style={{ color: TOKENS.starGold, fontWeight: 700 }}>Akwaaba</span>
           <span style={{ opacity: 0.5 }}>·</span>
           1st Edition
-          <span style={{ background: TOKENS.terracotta, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 999 }}>Registration opens soon</span>
+          <span style={{ background: TOKENS.terracotta, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 999 }}>Registration open</span>
         </div>
 
         <HeroLockup />
@@ -143,7 +143,7 @@ const Hero = ({ heroVariant, onNotify }) => {
         display: "grid", gridTemplateColumns: "repeat(4, 1fr)", position: "relative", zIndex: 2,
         borderTop: "1px solid rgba(255,255,255,0.16)",
       }}>
-        {[["12+", "Sessions"], ["300", "Attendees"], ["3", "Tracks"], ["1", "Workshop Track"]].map(([n, l], i) => (
+        {[["12+", "Sessions"], ["300", "Attendees"], ["3", "Tracks"], ["1", "Day"]].map(([n, l], i) => (
           <div key={l} style={{ padding: "24px 12px", textAlign: "center", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.12)" : "none" }}>
             <div style={{ fontSize: 34, fontWeight: 800, letterSpacing: "-0.01em" }}>{n}</div>
             <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: TOKENS.starGold, fontWeight: 700, marginTop: 6 }}>{l}</div>
@@ -173,8 +173,8 @@ const About = () => (
           <div style={{ fontSize: 17, lineHeight: 1.65, color: TOKENS.ink2 }}>
             <div style={{ marginBottom: 20, paddingBottom: 20, borderBottom: `1px solid ${TOKENS.line}` }}>
               <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", fontWeight: 700, color: TOKENS.terracotta, marginBottom: 8, fontFamily: "'Inter', sans-serif" }}>Theme</div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: TOKENS.ink, lineHeight: 1.35, fontFamily: "'Inter', sans-serif" }}>
-                Building the Backbone: Powering Ghana's Digital Ambitions Through Cloud Technology
+              <div style={{ fontSize: 16, fontWeight: 600, color: TOKENS.ink2, lineHeight: 1.45, fontFamily: "'Inter', sans-serif" }}>
+                Building the Backbone: powering Ghana's digital ambitions through cloud.
               </div>
             </div>
             <p style={{ marginTop: 0 }}>
@@ -217,7 +217,7 @@ const WhatToExpect = () => {
     ["03", "Networking", "Meet builders, founders, AWS Heroes, and the cloud community over jollof and coffee."],
     ["04", "100% Free", "Community-led and free, funded by our sponsors. Open to everyone, from students to Heroes."],
   ];
-  const accents = [TOKENS.terracotta, TOKENS.starGold, TOKENS.green, "#7BA4E8"];
+  const accents = [TOKENS.terracotta, TOKENS.indigo, TOKENS.green, "#1B6B8F"];
   return (
     <section id="expect" style={{ background: TOKENS.paper, padding: "120px 56px" }}>
       <Reveal>

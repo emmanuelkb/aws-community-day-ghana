@@ -24,9 +24,9 @@ const TOKENS = {
 };
 
 const CONTACT = "awsaccrausergroup@gmail.com";
-const LUMA_URL = "#";       /* TODO: real Luma event URL */
+const LUMA_URL = "https://luma.com/zty47ocz";  /* Luma registration */
 const CFP_URL = "#";        /* TODO: real CFP Google Form URL */
-const VOLUNTEER_URL = "#";  /* TODO: real Volunteer Google Form URL */
+const VOLUNTEER_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc8OcG8_wKV3TremoRZcDq1uXARsImE3KFNFlm3GVHvouPwqg/viewform";  /* Volunteer Google Form */
 
 const btnPrimary = () => ({ background: TOKENS.terracotta, color: "#fff", border: 0, padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block", letterSpacing: "0.08em", textTransform: "uppercase" });
 const btnGhost = () => ({ background: "transparent", color: TOKENS.ink, border: `1px solid ${TOKENS.ink}`, padding: "17px 34px", borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", textDecoration: "none", display: "inline-block", letterSpacing: "0.08em", textTransform: "uppercase" });
@@ -225,15 +225,15 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active 
         })}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <button onClick={onRegister} className="nav-cta" style={{
-          background: onDark ? TOKENS.awsOrange : TOKENS.ink,
-          color: onDark ? TOKENS.navy : TOKENS.cream,
+        <a href={LUMA_URL} target="_blank" rel="noopener" className="nav-cta" style={{
+          background: TOKENS.awsOrange,
+          color: TOKENS.navy,
           border: 0, padding: "11px 22px", borderRadius: 4,
           fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit",
-          letterSpacing: "0.08em", textTransform: "uppercase",
+          letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", display: "inline-block",
         }}>
           Register
-        </button>
+        </a>
         <button onClick={onMobileToggle} className="mobile-toggle" aria-label="Menu" style={{
           display: "none", background: "transparent", border: 0, padding: 6, cursor: "pointer",
         }}>
@@ -271,11 +271,12 @@ const MobileMenu = ({ open, onClose, onRegister }) => {
           }}>{l}</a>
         ))}
       </div>
-      <button onClick={() => { onClose(); onRegister(); }} style={{
+      <a href={LUMA_URL} target="_blank" rel="noopener" onClick={onClose} style={{
         marginTop: 40, background: TOKENS.awsOrange, color: TOKENS.navy, border: 0,
         padding: "18px 28px", borderRadius: 4, fontSize: 13, fontWeight: 700,
         fontFamily: "inherit", letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer",
-      }}>Register</button>
+        textDecoration: "none", display: "block", textAlign: "center",
+      }}>Register</a>
     </div>
   );
 };
@@ -434,10 +435,10 @@ const NotifyModal = ({ open, onClose }) => {
             <>
               <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: TOKENS.terracotta, fontWeight: 700 }}>Get notified</div>
               <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 30, fontWeight: 800, lineHeight: 1.1, margin: "16px 0 8px", color: TOKENS.ink, letterSpacing: "-0.015em", textTransform: "uppercase" }}>
-                Tickets open<br />on Luma soon.
+                Stay in<br />the loop.
               </h3>
               <p style={{ fontSize: 15, color: TOKENS.ink2, lineHeight: 1.55, margin: "0 0 24px" }}>
-                Leave your email and we'll send the registration link the moment it's live.
+                Registration is already open on Luma. Leave your email for speaker and agenda updates.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <input placeholder="Your name" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} style={inputStyle} />
@@ -455,7 +456,7 @@ const NotifyModal = ({ open, onClose }) => {
                 Medaase,<br /><span style={{ color: TOKENS.terracotta }}>{data.name}!</span>
               </h3>
               <p style={{ fontSize: 15, color: TOKENS.ink2, lineHeight: 1.55, maxWidth: 340, margin: "0 auto" }}>
-                You're on the list. We'll email <strong>{data.email}</strong> when registration opens.
+                You're on the list. We'll email <strong>{data.email}</strong> with speaker and agenda updates.
               </p>
               <button onClick={onClose} style={{ ...btnGhost(), marginTop: 28 }}>Done</button>
             </div>
