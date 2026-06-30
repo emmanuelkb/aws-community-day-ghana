@@ -364,6 +364,7 @@ const Nav = ({
       transition: "all .3s ease",
       background: scrolled ? "rgba(250,246,238,0.92)" : onDark ? "rgba(31,42,61,0.4)" : "transparent",
       backdropFilter: scrolled || onDark ? "blur(12px)" : "none",
+      WebkitBackdropFilter: scrolled || onDark ? "blur(12px)" : "none",
       borderBottom: scrolled ? `1px solid ${TOKENS.line}` : onDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent",
       display: "flex",
       justifyContent: "space-between",
@@ -892,7 +893,8 @@ const NotifyModal = ({
       alignItems: "center",
       justifyContent: "center",
       padding: 24,
-      backdropFilter: "blur(8px)"
+      backdropFilter: "blur(8px)",
+      WebkitBackdropFilter: "blur(8px)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     onClick: e => e.stopPropagation(),

@@ -196,6 +196,7 @@ const Nav = ({ onRegister, onMobileToggle, mobileOpen, darkHero = false, active 
       background: scrolled ? "rgba(250,246,238,0.92)"
                 : (onDark ? "rgba(31,42,61,0.4)" : "transparent"),
       backdropFilter: scrolled || onDark ? "blur(12px)" : "none",
+      WebkitBackdropFilter: scrolled || onDark ? "blur(12px)" : "none",
       borderBottom: scrolled ? `1px solid ${TOKENS.line}`
                   : (onDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent"),
       display: "flex", justifyContent: "space-between", alignItems: "center",
@@ -428,7 +429,7 @@ const NotifyModal = ({ open, onClose }) => {
   React.useEffect(() => { if (open) { setStep(0); setData({ name: "", email: "", role: "" }); } }, [open]);
   if (!open) return null;
   return (
-    <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(15,20,32,0.78)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24, backdropFilter: "blur(8px)" }}>
+    <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(15,20,32,0.78)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24, backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}>
       <div onClick={(e) => e.stopPropagation()} style={{ background: TOKENS.cream, borderRadius: 16, maxWidth: 500, width: "100%", position: "relative", overflow: "hidden" }}>
         <div style={{ height: 4, background: `linear-gradient(90deg, ${TOKENS.terracotta} 0 33%, ${TOKENS.starGold} 33% 66%, ${TOKENS.green} 66% 100%)` }} />
         <button onClick={onClose} style={{ position: "absolute", top: 14, right: 18, background: "transparent", border: 0, cursor: "pointer", fontSize: 22, color: TOKENS.ink, lineHeight: 1, padding: 6 }}>×</button>
