@@ -80,9 +80,9 @@ const CountdownNavy = ({ targetDate }) => {
   const cells = [["Days", d], ["Hrs", h], ["Min", m], ["Sec", s]];
   const pad = (v) => v == null ? "––" : String(v).padStart(2, "0");
   return (
-    <div style={{ display: "flex", gap: 14 }}>
+    <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
       {cells.map(([label, v]) => (
-        <div key={label} style={{ textAlign: "center", minWidth: 64, padding: "12px 10px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8 }}>
+        <div key={label} style={{ textAlign: "center", minWidth: 60, flex: "0 0 auto", padding: "12px 10px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8 }}>
           <div style={{ fontSize: 26, lineHeight: 1, fontWeight: 800, color: "#fff", fontVariantNumeric: "tabular-nums" }}>{pad(v)}</div>
           <div style={{ fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: TOKENS.starGold, marginTop: 6, fontWeight: 700 }}>{label}</div>
         </div>
@@ -92,7 +92,7 @@ const CountdownNavy = ({ targetDate }) => {
 };
 
 /* ───────────────────── Hero ───────────────────── */
-const Hero = ({ heroVariant, onNotify }) => {
+const Hero = ({ heroVariant }) => {
   return (
     <section id="top" style={{
       position: "relative", minHeight: "100vh", overflow: "hidden",
@@ -103,7 +103,7 @@ const Hero = ({ heroVariant, onNotify }) => {
       <div aria-hidden style={{ position: "absolute", top: 92, left: 0, height: 6, width: 220,
         background: `linear-gradient(90deg, ${TOKENS.terracotta} 0 33%, ${TOKENS.starGold} 33% 66%, ${TOKENS.green} 66% 100%)` }}/>
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "40px 56px", position: "relative", zIndex: 2, width: "100%", maxWidth: 1100, margin: "0 auto" }}>
+      <div className="hero-inner" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "40px 56px", position: "relative", zIndex: 2, width: "100%", maxWidth: 1100, margin: "0 auto" }}>
         <h1 style={{position:"absolute",width:1,height:1,overflow:"hidden",clip:"rect(0 0 0 0)",whiteSpace:"nowrap"}}>AWS Community Day Ghana 2026 — Accra, 29 August 2026</h1>
         {/* Edition badge */}
         <div style={{
@@ -131,7 +131,7 @@ const Hero = ({ heroVariant, onNotify }) => {
 
         <div style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap", justifyContent: "center" }}>
           <a href={LUMA_URL} target="_blank" rel="noopener" style={btnPrimaryNavy()}>Register on Luma</a>
-          <button onClick={onNotify} style={btnGhostNavy()}>Notify me</button>
+          <a href="agenda.html" style={btnGhostNavy()}>View the agenda</a>
         </div>
 
         <div style={{ marginTop: 40 }}>

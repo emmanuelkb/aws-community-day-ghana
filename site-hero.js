@@ -194,13 +194,16 @@ const CountdownNavy = ({
   return /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
-      gap: 14
+      gap: 14,
+      flexWrap: "wrap",
+      justifyContent: "center"
     }
   }, cells.map(([label, v]) => /*#__PURE__*/React.createElement("div", {
     key: label,
     style: {
       textAlign: "center",
-      minWidth: 64,
+      minWidth: 60,
+      flex: "0 0 auto",
       padding: "12px 10px",
       background: "rgba(255,255,255,0.05)",
       border: "1px solid rgba(255,255,255,0.12)",
@@ -228,8 +231,7 @@ const CountdownNavy = ({
 
 /* ───────────────────── Hero ───────────────────── */
 const Hero = ({
-  heroVariant,
-  onNotify
+  heroVariant
 }) => {
   return /*#__PURE__*/React.createElement("section", {
     id: "top",
@@ -257,6 +259,7 @@ const Hero = ({
       background: `linear-gradient(90deg, ${TOKENS.terracotta} 0 33%, ${TOKENS.starGold} 33% 66%, ${TOKENS.green} 66% 100%)`
     }
   }), /*#__PURE__*/React.createElement("div", {
+    className: "hero-inner",
     style: {
       flex: 1,
       display: "flex",
@@ -355,10 +358,10 @@ const Hero = ({
     target: "_blank",
     rel: "noopener",
     style: btnPrimaryNavy()
-  }, "Register on Luma"), /*#__PURE__*/React.createElement("button", {
-    onClick: onNotify,
+  }, "Register on Luma"), /*#__PURE__*/React.createElement("a", {
+    href: "agenda.html",
     style: btnGhostNavy()
-  }, "Notify me")), /*#__PURE__*/React.createElement("div", {
+  }, "View the agenda")), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 40
     }

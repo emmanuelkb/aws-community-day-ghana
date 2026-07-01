@@ -2,29 +2,22 @@
 const {
   Nav,
   MobileMenu,
-  Footer,
-  NotifyModal
+  Footer
 } = window;
 const {
   SpeakersPage
 } = window;
 function App() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [notifyOpen, setNotifyOpen] = React.useState(false);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Nav, {
-    onRegister: () => setNotifyOpen(true),
     onMobileToggle: () => setMobileOpen(!mobileOpen),
     mobileOpen: mobileOpen,
     darkHero: true,
     active: "speakers.html"
   }), /*#__PURE__*/React.createElement(MobileMenu, {
     open: mobileOpen,
-    onClose: () => setMobileOpen(false),
-    onRegister: () => setNotifyOpen(true)
-  }), /*#__PURE__*/React.createElement(SpeakersPage, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(NotifyModal, {
-    open: notifyOpen,
-    onClose: () => setNotifyOpen(false)
-  }));
+    onClose: () => setMobileOpen(false)
+  }), /*#__PURE__*/React.createElement(SpeakersPage, null), /*#__PURE__*/React.createElement(Footer, null));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 })();

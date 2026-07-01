@@ -43,6 +43,7 @@ const Sponsors = () => /*#__PURE__*/React.createElement("section", {
     borderTop: `1px solid ${TOKENS.line}`
   }
 }, /*#__PURE__*/React.createElement(Reveal, null, /*#__PURE__*/React.createElement("div", {
+  className: "section-pad",
   style: {
     maxWidth: 1280,
     margin: "0 auto",
@@ -526,10 +527,8 @@ const FAQ = () => {
   }))));
 };
 
-/* ───────────────────── Newsletter / notify ───────────────────── */
-const Newsletter = ({
-  onNotify
-}) => /*#__PURE__*/React.createElement("section", {
+/* ───────────────────── Register prompt ───────────────────── */
+const Newsletter = () => /*#__PURE__*/React.createElement("section", {
   style: {
     background: TOKENS.navy,
     color: "#fff",
@@ -560,7 +559,7 @@ const Newsletter = ({
   }
 }, /*#__PURE__*/React.createElement(SectionEyebrow, {
   dark: true
-}, "Stay in the loop"), /*#__PURE__*/React.createElement("h2", {
+}, "Registration is open"), /*#__PURE__*/React.createElement("h2", {
   style: {
     fontFamily: "'Inter', sans-serif",
     fontSize: "clamp(40px, 6.5vw, 88px)",
@@ -572,7 +571,7 @@ const Newsletter = ({
     marginTop: 24,
     marginBottom: 0
   }
-}, "Be the first to know"), /*#__PURE__*/React.createElement("p", {
+}, "Secure your spot"), /*#__PURE__*/React.createElement("p", {
   style: {
     fontSize: 18,
     lineHeight: 1.55,
@@ -580,7 +579,7 @@ const Newsletter = ({
     maxWidth: 560,
     margin: "32px auto 0"
   }
-}, "Registration is open on Luma. Subscribe and we'll send speaker drops and agenda updates as they land."), /*#__PURE__*/React.createElement("div", {
+}, "Registration is free and open now on Luma. Capacity is 300 \u2014 grab your spot and follow the event page for speaker drops and agenda updates."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 36,
     display: "flex",
@@ -593,10 +592,7 @@ const Newsletter = ({
   target: "_blank",
   rel: "noopener",
   style: btnPrimaryNavy()
-}, "Register on Luma"), /*#__PURE__*/React.createElement("button", {
-  onClick: onNotify,
-  style: btnGhostNavy()
-}, "Notify me"))));
+}, "Register on Luma"))));
 Object.assign(window, {
   Sponsors,
   Venue,

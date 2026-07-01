@@ -50,6 +50,7 @@ const WhySponsorBand = () => {
       color: "#fff"
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "section-pad",
     style: {
       maxWidth: 1100,
       margin: "0 auto",

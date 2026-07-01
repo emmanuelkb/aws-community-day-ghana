@@ -85,7 +85,7 @@ const WhySponsorBand = () => {
   ];
   return (
     <section style={{ background: TOKENS.navy, color: "#fff" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "64px 56px" }}>
+      <div className="section-pad" style={{ maxWidth: 1100, margin: "0 auto", padding: "64px 56px" }}>
         <Reveal>
           <div style={{ marginBottom: 40 }}>
             <SectionEyebrow dark>Why sponsor?</SectionEyebrow>

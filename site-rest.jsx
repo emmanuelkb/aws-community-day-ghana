@@ -17,7 +17,7 @@ const SPONSOR_TIERS = [
 const Sponsors = () => (
   <section id="sponsors" style={{ background: TOKENS.cream, padding: "96px 0", borderTop: `1px solid ${TOKENS.line}` }}>
     <Reveal>
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 56px" }}>
+      <div className="section-pad" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 56px" }}>
         <SectionEyebrow>Sponsors</SectionEyebrow>
         <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, marginTop: 20, alignItems: "center" }} className="sponsors-band-grid">
           <div>
@@ -218,24 +218,23 @@ const FAQ = () => {
   );
 };
 
-/* ───────────────────── Newsletter / notify ───────────────────── */
-const Newsletter = ({ onNotify }) => (
+/* ───────────────────── Register prompt ───────────────────── */
+const Newsletter = () => (
   <section style={{ background: TOKENS.navy, color: "#fff", padding: "120px 56px", position: "relative", overflow: "hidden" }}>
     <KenteBar height={4} />
     <div style={{ position: "absolute", top: 0, right: 0, width: 280, height: "100%", opacity: 0.4 }}>
       <KenteStripes width={80} />
     </div>
     <div style={{ maxWidth: 820, margin: "0 auto", textAlign: "center", position: "relative", paddingTop: 24 }}>
-      <SectionEyebrow dark>Stay in the loop</SectionEyebrow>
+      <SectionEyebrow dark>Registration is open</SectionEyebrow>
       <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(40px, 6.5vw, 88px)", lineHeight: 1, fontWeight: 800, letterSpacing: "-0.02em", color: "#fff", textTransform: "uppercase", marginTop: 24, marginBottom: 0 }}>
-        Be the first to know
+        Secure your spot
       </h2>
       <p style={{ fontSize: 18, lineHeight: 1.55, color: "rgba(255,255,255,0.78)", maxWidth: 560, margin: "32px auto 0" }}>
-        Registration is open on Luma. Subscribe and we'll send speaker drops and agenda updates as they land.
+        Registration is free and open now on Luma. Capacity is 300 — grab your spot and follow the event page for speaker drops and agenda updates.
       </p>
       <div style={{ marginTop: 36, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
         <a href={window.LUMA_URL} target="_blank" rel="noopener" style={btnPrimaryNavy()}>Register on Luma</a>
-        <button onClick={onNotify} style={btnGhostNavy()}>Notify me</button>
       </div>
     </div>
   </section>

@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; scroll-behavior: smooth; overflow-x: hidden; }
   body { font-family: 'Inter', sans-serif; background: #1F2A3D; color: #1a1410; -webkit-font-smoothing: antialiased; }
   ::selection { background: #C44536; color: #fff; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
@@ -44,6 +44,13 @@
     .expect-grid, .crew-grid { grid-template-columns: 1fr !important; }
     nav img { height: 40px !important; }
     .format-row { grid-template-columns: 1fr !important; gap: 4px !important; }
+    .sponsors-band-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .speakers-band-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+    .hero-inner { padding-left: 24px !important; padding-right: 24px !important; }
+    .footer-grid { grid-template-columns: 1fr !important; }
+    .section-pad { padding-left: 24px !important; padding-right: 24px !important; }
+    footer { padding-left: 24px !important; padding-right: 24px !important; }
+    header { padding-left: 24px !important; padding-right: 24px !important; }
   }
 </style>
 </head>
@@ -53,11 +60,11 @@
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
 
-<script src="site-core.js"></script>
-<script src="site-hero.js"></script>
-<script src="site-program.js"></script>
-<script src="site-rest.js"></script>
+<script src="site-core.js?v=2"></script>
+<script src="site-hero.js?v=2"></script>
+<script src="site-program.js?v=2"></script>
+<script src="site-rest.js?v=2"></script>
 
-<script src="boot-index.js"></script>
+<script src="boot-index.js?v=2"></script>
 </body>
 </html>

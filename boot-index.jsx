@@ -1,19 +1,17 @@
 const { Nav, MobileMenu } = window;
 const { Hero, HeroMarquee, About, WhatToExpect, Tracks } = window;
 const { WhyAttend, Speakers, Agenda, CFP } = window;
-const { Sponsors, Venue, Community, Crew, FAQ, Newsletter, Footer, NotifyModal } = window;
+const { Sponsors, Venue, Community, Crew, FAQ, Newsletter, Footer } = window;
 
 function App() {
-  const [notifyOpen, setNotifyOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const notify = () => setNotifyOpen(true);
 
   return (
     <div>
-      <Nav onRegister={notify} onMobileToggle={() => setMobileOpen(!mobileOpen)} mobileOpen={mobileOpen} darkHero={true} />
-      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} onRegister={notify} />
+      <Nav onMobileToggle={() => setMobileOpen(!mobileOpen)} mobileOpen={mobileOpen} darkHero={true} />
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
 
-      <Hero onNotify={notify} />
+      <Hero />
       <HeroMarquee />
       <About />
       <WhatToExpect />
@@ -27,10 +25,8 @@ function App() {
       <Community />
       <Crew />
       <FAQ />
-      <Newsletter onNotify={notify} />
+      <Newsletter />
       <Footer />
-
-      <NotifyModal open={notifyOpen} onClose={() => setNotifyOpen(false)} />
     </div>
   );
 }
